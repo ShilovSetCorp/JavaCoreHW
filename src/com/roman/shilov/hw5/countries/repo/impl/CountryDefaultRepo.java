@@ -1,13 +1,12 @@
 package com.roman.shilov.hw5.countries.repo.impl;
 
-import com.roman.shilov.hw5.common.solutions.ArrayUtils.ArrayUtils;
+import com.roman.shilov.hw5.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw5.countries.domain.Country;
 import com.roman.shilov.hw5.countries.repo.CountryRepo;
-import com.roman.shilov.hw5.order.domain.Order;
 
 import java.util.Arrays;
 
-import static com.roman.shilov.hw5.storage.Storage.countries;
+import static com.roman.shilov.hw5.storage.storage.countries;
 
 public class CountryDefaultRepo implements CountryRepo {
     private int countryIndex = -1;

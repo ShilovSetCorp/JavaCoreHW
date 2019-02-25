@@ -1,12 +1,12 @@
 package com.roman.shilov.hw5.order.repo.impl;
 
-import com.roman.shilov.hw5.common.solutions.ArrayUtils.ArrayUtils;
+import com.roman.shilov.hw5.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw5.order.domain.Order;
 import com.roman.shilov.hw5.order.repo.OrderRepo;
 
 import java.util.Arrays;
 
-import static com.roman.shilov.hw5.storage.Storage.orders;
+import static com.roman.shilov.hw5.storage.storage.orders;
 
 public class OrderDefaultRepo implements OrderRepo {
     private int orderIndex = -1;

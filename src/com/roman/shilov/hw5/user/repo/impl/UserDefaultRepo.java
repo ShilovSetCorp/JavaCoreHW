@@ -1,10 +1,10 @@
 package com.roman.shilov.hw5.user.repo.impl;
 
-import com.roman.shilov.hw5.common.solutions.ArrayUtils.ArrayUtils;
+import com.roman.shilov.hw5.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw5.user.domain.User;
 import com.roman.shilov.hw5.user.repo.UserRepo;
 
-import static com.roman.shilov.hw5.storage.Storage.users;
+import static com.roman.shilov.hw5.storage.storage.users;
 
 public class UserDefaultRepo implements UserRepo {
     private int userIndex = -1;

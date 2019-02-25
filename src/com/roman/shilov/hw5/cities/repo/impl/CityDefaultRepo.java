@@ -2,11 +2,11 @@ package com.roman.shilov.hw5.cities.repo.impl;
 
 import com.roman.shilov.hw5.cities.domain.City;
 import com.roman.shilov.hw5.cities.repo.CityRepo;
-import com.roman.shilov.hw5.common.solutions.ArrayUtils.ArrayUtils;
+import com.roman.shilov.hw5.common.solutions.utils.ArrayUtils;
 
 import java.util.Arrays;
 
-import static com.roman.shilov.hw5.storage.Storage.cities;
+import static com.roman.shilov.hw5.storage.storage.cities;
 
 public class CityDefaultRepo implements CityRepo {
 
