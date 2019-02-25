@@ -2,7 +2,9 @@ package com.roman.shilov.hw5.cities.service.impl;
 
 import com.roman.shilov.hw5.cities.domain.City;
 import com.roman.shilov.hw5.cities.repo.CityRepo;
+import com.roman.shilov.hw5.cities.search.CitySearchCondition;
 import com.roman.shilov.hw5.cities.service.CityService;
+import com.roman.shilov.hw5.common.buisness.search.BaseSearchConditition;
 
 public class CityDefaultService implements CityService {
 
@@ -22,6 +24,15 @@ public class CityDefaultService implements CityService {
         if(id != null){
             return repo.findById(id);
         }else {
+            return null;
+        }
+    }
+
+    @Override
+    public City find(BaseSearchConditition searchCondition) {
+        if(searchCondition instanceof CitySearchCondition){
+            return findById(searchCondition.getId());
+        }else{
             return null;
         }
     }
