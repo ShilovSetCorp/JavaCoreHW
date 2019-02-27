@@ -6,6 +6,8 @@ import com.roman.shilov.hw5.cities.search.CitySearchCondition;
 import com.roman.shilov.hw5.cities.service.CityService;
 import com.roman.shilov.hw5.common.buisness.search.BaseSearchConditition;
 
+import java.util.List;
+
 public class CityDefaultService implements CityService {
 
     private final CityRepo repo;
@@ -29,19 +31,15 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public City find(BaseSearchConditition searchCondition) {
-        if(searchCondition instanceof CitySearchCondition){
-            return findById(searchCondition.getId());
-        }else{
-            return null;
-        }
-    }
-
-    @Override
     public void delete(City city) {
         if(city.getId() != null){
             this.deleteById(city.getId());
         }
+    }
+
+    @Override
+    public List<City> search(CitySearchCondition searchCondition) {
+        return repo.search(searchCondition);
     }
 
     @Override

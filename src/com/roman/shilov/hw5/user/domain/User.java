@@ -9,7 +9,6 @@ public class User extends BaseDomain {
     private Passport passport;
     private ClientType clientType;
 
-
     private Order[] orders;
 
     public User(){}
@@ -63,7 +62,6 @@ public class User extends BaseDomain {
         return "name: "+ name + "\nlast name: " + last + "\n" + passport;
     }
 }
-
 
 class Passport{
     private String series;

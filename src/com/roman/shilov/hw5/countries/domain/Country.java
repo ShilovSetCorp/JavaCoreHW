@@ -3,9 +3,8 @@ package com.roman.shilov.hw5.countries.domain;
 import com.roman.shilov.hw5.cities.domain.City;
 import com.roman.shilov.hw5.common.buisness.domain.BaseDomain;
 
-import java.util.Arrays;
 
-public class Country extends BaseDomain {
+public abstract class Country extends BaseDomain {
     private String name;
     private String language;
     private City[] cities;

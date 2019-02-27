@@ -8,5 +8,4 @@ public interface BaseService {
 
     void printAll();
 
-    Object find(BaseSearchConditition searchCondition);
 }

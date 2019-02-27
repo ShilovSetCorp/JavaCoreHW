@@ -2,11 +2,12 @@ package com.roman.shilov.hw5.countries.service.impl;
 
 import com.roman.shilov.hw5.cities.domain.City;
 import com.roman.shilov.hw5.cities.repo.CityRepo;
-import com.roman.shilov.hw5.common.buisness.search.BaseSearchConditition;
 import com.roman.shilov.hw5.countries.domain.Country;
 import com.roman.shilov.hw5.countries.repo.CountryRepo;
 import com.roman.shilov.hw5.countries.search.CountrySearchCondition;
 import com.roman.shilov.hw5.countries.service.CountryService;
+
+import java.util.List;
 
 public class CountryDefaultService implements CountryService {
     private final CountryRepo countryRepo;
@@ -18,6 +19,11 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
+    public List<Country> search(CountrySearchCondition searchCondition) {
+        return countryRepo.search(searchCondition);
+    }
+
+    @Override
     public void add(Country country) {
         countryRepo.add(country);
 
@@ -25,15 +31,6 @@ public class CountryDefaultService implements CountryService {
             for(City city : country.getCities()){
                 cityRepo.add(city);
             }
-        }
-    }
-
-    @Override
-    public Country find(BaseSearchConditition searchCondition) {
-        if(searchCondition instanceof CountrySearchCondition){
-            return findById(searchCondition.getId());
-        }else{
-            return null;
         }
     }
 
