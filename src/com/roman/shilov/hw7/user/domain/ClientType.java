@@ -29,7 +29,7 @@ public enum ClientType {
 
     ClientType(String description){
         this.description = description;
-        map.put(this.description, ClientType.valueOf(this.description));
+        map.put(this.name(), this);
     }
 
     public String getDescription() {
