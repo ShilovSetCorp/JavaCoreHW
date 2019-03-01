@@ -11,6 +11,8 @@ public interface OrderService extends BaseService {
 
     Order findById(Long id);
 
+    void update(Order order);
+
     void delete(Order order);
 
     List<Order> search(OrderSearchCondition searchCondition);

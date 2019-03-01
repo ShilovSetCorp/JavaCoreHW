@@ -1,5 +1,6 @@
 package com.roman.shilov.hw7.user.service.impl;
 
+import com.roman.shilov.hw7.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw7.user.domain.User;
 import com.roman.shilov.hw7.user.repo.UserRepo;
 import com.roman.shilov.hw7.user.search.UserSearchCondition;
@@ -16,7 +17,13 @@ public class UserDefaultService implements UserService {
 
     @Override
     public void add(User user) {
+        user.setId(SequenceCreator.getNextId());
         repo.add(user);
+    }
+
+    @Override
+    public void update(User user) {
+        repo.update(user);
     }
 
 

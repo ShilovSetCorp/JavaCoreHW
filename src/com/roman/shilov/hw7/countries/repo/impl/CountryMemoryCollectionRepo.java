@@ -52,6 +52,14 @@ public class CountryMemoryCollectionRepo implements CountryRepo {
     }
 
     @Override
+    public void update(Country country) {
+        Country found = findById(country.getId());
+        found.setName(country.getName());
+        found.setLanguage(country.getLanguage());
+        found.setCities(country.getCities());
+    }
+
+    @Override
     public void deleteById(long id) {
         Country found = findCountryById(id);
 

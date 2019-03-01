@@ -80,6 +80,14 @@ public class UserMemoryArrayRepo implements UserRepo {
     }
 
     @Override
+    public void update(User user) {
+        User found = findById(user.getId());
+        found.setName(user.getName());
+        found.setLast(user.getLast());
+        found.setPassport(user.getPassport());
+    }
+
+    @Override
     public void deleteById(long id) {
         Integer userIndex = findUserIndexById(id);
         if(userIndex != null){

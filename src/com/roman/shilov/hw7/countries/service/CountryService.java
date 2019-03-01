@@ -11,6 +11,8 @@ public interface CountryService extends BaseService {
 
     Country findById(Long id);
 
+    void update(Country country);
+
     void delete(Country country);
 
     List<Country> search(CountrySearchCondition searchCondition);

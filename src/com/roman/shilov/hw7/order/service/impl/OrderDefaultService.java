@@ -1,5 +1,7 @@
 package com.roman.shilov.hw7.order.service.impl;
 
+import com.roman.shilov.hw5.common.buisness.search.BaseSearchConditition;
+import com.roman.shilov.hw7.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw7.order.domain.Order;
 import com.roman.shilov.hw7.order.repo.OrderRepo;
 import com.roman.shilov.hw7.order.search.OrderSearchCondition;
@@ -16,6 +18,7 @@ public class OrderDefaultService implements OrderService {
 
     @Override
     public void add(Order order) {
+        order.setId(SequenceCreator.getNextId());
         repo.add(order);
     }
 
@@ -26,6 +29,11 @@ public class OrderDefaultService implements OrderService {
         }else {
             return null;
         }
+    }
+
+    @Override
+    public void update(Order order) {
+        repo.update(order);
     }
 
     @Override

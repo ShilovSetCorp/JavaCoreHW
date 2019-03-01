@@ -66,6 +66,16 @@ public class OrderMemoryCollectionRepo implements OrderRepo {
     }
 
     @Override
+    public void update(Order order) {
+        Order found = findById(order.getId());
+        found.setUser(order.getUser());
+        found.setCity(order.getCity());
+        found.setCountry(order.getCountry());
+        found.setPrice(order.getPrice());
+        found.setDescription(order.getDescription());
+    }
+
+    @Override
     public void deleteById(long id) {
         Order found = findOrderById(id);
 

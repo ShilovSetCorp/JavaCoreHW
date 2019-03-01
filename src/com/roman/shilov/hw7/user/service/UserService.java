@@ -10,6 +10,7 @@ public interface UserService extends BaseService {
 
     void add(User user);
 
+    void update(User user);
 
     User findById(Long id);
 

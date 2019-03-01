@@ -19,8 +19,7 @@ public class User extends BaseDomain {
         this.passport = passport;
     }
 
-    public User(Long id, String name, String last){
-        this.id = id;
+    public User(String name, String last){
         this.name = name;
         this.last = last;
     }
@@ -71,6 +70,7 @@ class Passport{
         this.series = series;
         this.number = number;
     }
+
 
     @Override
     public String toString() {

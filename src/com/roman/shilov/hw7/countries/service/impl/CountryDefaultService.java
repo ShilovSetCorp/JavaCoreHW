@@ -2,6 +2,7 @@ package com.roman.shilov.hw7.countries.service.impl;
 
 import com.roman.shilov.hw7.cities.domain.City;
 import com.roman.shilov.hw7.cities.repo.CityRepo;
+import com.roman.shilov.hw7.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw7.countries.domain.Country;
 import com.roman.shilov.hw7.countries.repo.CountryRepo;
 import com.roman.shilov.hw7.countries.search.CountrySearchCondition;
@@ -25,10 +26,12 @@ public class CountryDefaultService implements CountryService {
 
     @Override
     public void add(Country country) {
+        country.setId(SequenceCreator.getNextId());
         countryRepo.add(country);
 
         if(country.getCities() != null){
             for(City city : country.getCities()){
+                city.setId(SequenceCreator.getNextId());
                 cityRepo.add(city);
             }
         }
@@ -41,6 +44,11 @@ public class CountryDefaultService implements CountryService {
         }else {
             return null;
         }
+    }
+
+    @Override
+    public void update(Country country) {
+        countryRepo.update(country);
     }
 
     @Override

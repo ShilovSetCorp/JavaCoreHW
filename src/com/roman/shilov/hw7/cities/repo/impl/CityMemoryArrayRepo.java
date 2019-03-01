@@ -81,6 +81,13 @@ public class CityMemoryArrayRepo implements CityRepo {
     }
 
     @Override
+    public void update(City city) {
+        City found = findById(city.getId());
+        found.setName(city.getName());
+        found.setPopulation(city.getPopulation());
+    }
+
+    @Override
     public void deleteById(long id) {
         Integer cityIndex = findCityIndexId(id);
         if(cityIndex != null){

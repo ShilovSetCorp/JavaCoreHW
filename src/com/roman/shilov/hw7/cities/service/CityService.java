@@ -11,6 +11,8 @@ public interface CityService extends BaseService {
 
     City findById(Long id);
 
+    void update(City city);
+
     void delete(City city);
 
     List<City> search(CitySearchCondition searchCondition);

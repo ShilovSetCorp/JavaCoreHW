@@ -61,6 +61,14 @@ public class UserMemoryCollectionRepo implements UserRepo {
     }
 
     @Override
+    public void update(User user) {
+        User found = findById(user.getId());
+        found.setName(user.getName());
+        found.setLast(user.getLast());
+        found.setPassport(user.getPassport());
+    }
+
+    @Override
     public void printAll() {
         for(User user: userList){
             System.out.println(user);

@@ -4,6 +4,7 @@ import com.roman.shilov.hw7.cities.domain.City;
 import com.roman.shilov.hw7.cities.repo.CityRepo;
 import com.roman.shilov.hw7.cities.search.CitySearchCondition;
 import com.roman.shilov.hw7.cities.service.CityService;
+import com.roman.shilov.hw7.common.buisness.application.sequencecreator.SequenceCreator;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class CityDefaultService implements CityService {
 
     @Override
     public void add(City city) {
+        city.setId(SequenceCreator.getNextId());
         repo.add(city);
     }
 
@@ -27,6 +29,11 @@ public class CityDefaultService implements CityService {
         }else {
             return null;
         }
+    }
+
+    @Override
+    public void update(City city) {
+        repo.update(city);
     }
 
     @Override

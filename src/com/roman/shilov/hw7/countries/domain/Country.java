@@ -9,6 +9,11 @@ public abstract class Country extends BaseDomain {
     private String language;
     private City[] cities;
 
+    public Country(String name, String language) {
+        this.name = name;
+        this.language = language;
+    }
+
     public Country() {
     }
 
