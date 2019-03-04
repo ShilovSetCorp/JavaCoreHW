@@ -1,36 +1,48 @@
 package com.roman.shilov.hw8;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
 
 public class ArraySorter {
+    public static String[] sort(String[] arr){
+        sort(arr, new String[arr.length], 0, arr.length-1);
+        return arr;
+    }
 
-    public static String[] sort(String[] unsortedArr){
-        String[] sortedArr = new String[unsortedArr.length];
-        List<String> stringList = new ArrayList<>(unsortedArr.length);
-        stringList = Arrays.asList(unsortedArr);
-        Comparator<String> comp = new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if(o1.compareTo(o2) > 0){
-                    return 1;
-                }else if(o1.equals(o2)) {
-                    return 0;
-                }else {
-                    return -1;
-                }
+    public static void sort(String[] array, String[] tmp, int leftStart, int rightEnd){
+        if(leftStart >= rightEnd){
+            return;
+        }
+        int middle = (leftStart + rightEnd) / 2;
+        sort(array, tmp, leftStart, middle);
+        sort(array, tmp, middle + 1, rightEnd);
+        merge(array, tmp, leftStart, rightEnd);
+    }
+
+    private static void merge(String[] array, String[] tmp, int leftStart, int rightEnd){
+        int leftEnd = (leftStart + rightEnd) / 2;
+        int rightStart = leftEnd + 1;
+        int size = rightEnd - leftStart + 1;
+
+        int left = leftStart;
+        int right = rightStart;
+        int index = leftStart;
+
+        while (left <= leftEnd && right <= rightEnd){
+            if(array[left].compareTo(array[right]) <= 0){
+                tmp[index] = array[left];
+                left++;
+            }else{
+                tmp[index] = array[right];
+                right++;
             }
-        };
-        stringList.sort(comp);
-
-        for(int i = 0; i < stringList.size(); i++){
-            sortedArr[i] = stringList.get(i);
+            index++;
         }
 
-        return sortedArr;
+        System.arraycopy(array, left, tmp, index, leftEnd - left + 1);
+        System.arraycopy(array, right, tmp, index, rightEnd - right + 1);
+        System.arraycopy(tmp, leftStart, array, leftStart, size);
     }
+
 
     public static void main(String[] args) {
         String[] strings = {"c", "a", "b", "C", "B", "A"};
