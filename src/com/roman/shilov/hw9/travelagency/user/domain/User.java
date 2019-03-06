@@ -58,7 +58,11 @@ public class User extends BaseDomain {
 
     @Override
     public String toString() {
-        return "name: "+ name + "\nlast name: " + last + "\n" + passport;
+        if(passport != null) {
+            return "name: " + name + "\nlast name: " + last + "\n" + passport;
+        }else{
+            return "name: " + name + "\nlast name: " + last;
+        }
     }
 }
 
