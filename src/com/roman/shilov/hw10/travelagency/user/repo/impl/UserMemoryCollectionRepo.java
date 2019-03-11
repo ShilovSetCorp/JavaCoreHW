@@ -1,5 +1,6 @@
 package com.roman.shilov.hw10.travelagency.user.repo.impl;
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.user.domain.User;
 import com.roman.shilov.hw10.travelagency.user.repo.UserRepo;
@@ -10,16 +11,17 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.roman.shilov.hw9.travelagency.storage.Storage.userList;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.userList;
 
 public class UserMemoryCollectionRepo implements UserRepo {
     @Override
-    public void add(User user) {
+    public void insert(User user) {
+        user.setId(SequenceCreator.getNextId());
         userList.add(user);
     }
 
     @Override
-    public User findById(long id) {
+    public User findById(Long id) {
         return findUserById(id);
     }
 
@@ -50,42 +52,13 @@ public class UserMemoryCollectionRepo implements UserRepo {
                 }
             }
 
-            if(searchCondition.getOrderType() != null){
-                if(searchCondition.getOrderType().equals(OrderType.ASC)){
-                    result.sort(new Comparator<User>() {
-                        @Override
-                        public int compare(User o1, User o2) {
-                            if(o1.getId() > o2.getId()){
-                                return 1;
-                            }else if(o1.getId() < o2.getId()){
-                                return -1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }else {
-                    result.sort(new Comparator<User>() {
-                        @Override
-                        public int compare(User o1, User o2) {
-                            if(o1.getId() > o2.getId()){
-                                return -1;
-                            }else if(o1.getId() < o2.getId()){
-                                return 1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }
-            }
 
             return result;
         }
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         User found = findUserById(id);
 
         if (found != null) {

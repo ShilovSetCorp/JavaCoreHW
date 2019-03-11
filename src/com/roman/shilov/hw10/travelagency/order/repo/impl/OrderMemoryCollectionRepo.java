@@ -1,5 +1,6 @@
 package com.roman.shilov.hw10.travelagency.order.repo.impl;
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.order.domain.Order;
 import com.roman.shilov.hw10.travelagency.order.repo.OrderRepo;
@@ -10,17 +11,18 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.roman.shilov.hw9.travelagency.storage.Storage.ordersList;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.ordersList;
 
 
 public class OrderMemoryCollectionRepo implements OrderRepo {
     @Override
-    public void add(Order order) {
+    public void insert(Order order) {
+        order.setId(SequenceCreator.getNextId());
         ordersList.add(order);
     }
 
     @Override
-    public Order findById(long id) {
+    public Order findById(Long id) {
         return findOrderById(id);
     }
 
@@ -65,35 +67,6 @@ public class OrderMemoryCollectionRepo implements OrderRepo {
                 }
             }
 
-            if(searchCondition.getOrderType() != null){
-                if(searchCondition.getOrderType().equals(OrderType.ASC)){
-                    result.sort(new Comparator<Order>() {
-                        @Override
-                        public int compare(Order o1, Order o2) {
-                            if(o1.getId() > o2.getId()){
-                                return 1;
-                            }else if(o1.getId() < o2.getId()){
-                                return -1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }else {
-                    result.sort(new Comparator<Order>() {
-                        @Override
-                        public int compare(Order o1, Order o2) {
-                            if(o1.getId() > o2.getId()){
-                                return -1;
-                            }else if(o1.getId() < o2.getId()){
-                                return 1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }
-            }
 
             return result;
         }
@@ -110,7 +83,7 @@ public class OrderMemoryCollectionRepo implements OrderRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Order found = findOrderById(id);
 
         if (found != null) {

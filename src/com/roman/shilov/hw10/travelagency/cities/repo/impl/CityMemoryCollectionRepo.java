@@ -3,6 +3,7 @@ package com.roman.shilov.hw10.travelagency.cities.repo.impl;
 import com.roman.shilov.hw10.travelagency.cities.domain.City;
 import com.roman.shilov.hw10.travelagency.cities.repo.CityRepo;
 import com.roman.shilov.hw10.travelagency.cities.search.CitySearchCondition;
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 
 
 import java.util.ArrayList;
@@ -18,12 +19,13 @@ public class CityMemoryCollectionRepo implements CityRepo {
     private CityOrderingComponent orderingComponent = new CityOrderingComponent();
 
     @Override
-    public void add(City city) {
+    public void insert(City city) {
+        city.setId(SequenceCreator.getNextId());
         cityList.add(city);
     }
 
     @Override
-    public City findById(long id) {
+    public City findById(Long id) {
         return findCityById(id);
     }
 
@@ -79,7 +81,7 @@ public class CityMemoryCollectionRepo implements CityRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         City found = findCityById(id);
 
         if (found != null) {

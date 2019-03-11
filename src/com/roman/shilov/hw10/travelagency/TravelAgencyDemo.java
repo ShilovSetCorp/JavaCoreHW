@@ -4,6 +4,7 @@ import com.roman.shilov.hw10.travelagency.cities.domain.City;
 import com.roman.shilov.hw10.travelagency.cities.service.CityService;
 import com.roman.shilov.hw10.travelagency.common.buisness.application.StorageType;
 import com.roman.shilov.hw10.travelagency.common.buisness.application.servicefactory.ServiceSupplier;
+import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderDirection;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.countries.domain.Country;
 import com.roman.shilov.hw10.travelagency.countries.domain.RockyCountry;
@@ -27,10 +28,10 @@ public class TravelAgencyDemo {
         private CityService cityService = ServiceSupplier.setSupplier().getCityService();
 
         private void addUsers(){
-            userService.add(new User("Roma", "Shilov"));
-            userService.add(new User("Kostya", "Supov"));
-            userService.add(new User("Kostya", "Ignatev"));
-            userService.add(new User("Volodya", "Kuchman"));
+            userService.insert(new User("Roma", "Shilov"));
+            userService.insert(new User("Kostya", "Supov"));
+            userService.insert(new User("Kostya", "Ignatev"));
+            userService.insert(new User("Volodya", "Kuchman"));
         }
 
         private void addCountry(){
@@ -38,7 +39,7 @@ public class TravelAgencyDemo {
             City zurich = new City();
             City davos = new City();
             switzerland.setCities(new City[] {zurich, davos});
-            countryService.add(switzerland);
+            countryService.insert(switzerland);
         }
 
         public void printUsers(){
@@ -48,14 +49,14 @@ public class TravelAgencyDemo {
         public Collection<User> search(long id){
             UserSearchCondition usc = new UserSearchCondition();
             usc.setId(id);
-            usc.setOrderType(OrderType.ASC);
+           // usc.setOrderType(OrderDirection.ASC);
             return userService.search(usc);
         }
 
         public Collection<User> search(String name){
             UserSearchCondition usc = new UserSearchCondition();
             usc.setName(name);
-            usc.setOrderType(OrderType.DESC);
+       //     usc.setOrderType(OrderType.DESC);
             return userService.search(usc);
         }
 

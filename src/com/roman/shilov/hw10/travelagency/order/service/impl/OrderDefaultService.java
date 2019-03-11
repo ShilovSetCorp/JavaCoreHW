@@ -16,9 +16,9 @@ public class OrderDefaultService implements OrderService {
     }
 
     @Override
-    public void add(Order order) {
-        order.setId(SequenceCreator.getNextId());
-        repo.add(order);
+    public void insert(Order order) {
+
+        repo.insert(order);
     }
 
     @Override

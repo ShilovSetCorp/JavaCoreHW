@@ -17,9 +17,9 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public void add(City city) {
-        city.setId(SequenceCreator.getNextId());
-        repo.add(city);
+    public void insert(City city) {
+        if(city != null)
+            repo.insert(city);
     }
 
     @Override

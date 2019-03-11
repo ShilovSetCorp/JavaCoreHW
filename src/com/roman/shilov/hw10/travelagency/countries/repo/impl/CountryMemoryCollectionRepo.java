@@ -1,5 +1,6 @@
 package com.roman.shilov.hw10.travelagency.countries.repo.impl;
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.countries.domain.Country;
 import com.roman.shilov.hw10.travelagency.countries.repo.CountryRepo;
@@ -18,12 +19,13 @@ public class CountryMemoryCollectionRepo implements CountryRepo {
     private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
 
     @Override
-    public void add(Country country) {
+    public void insert(Country country) {
+        country.setId(SequenceCreator.getNextId());
         countryList.add(country);
     }
 
     @Override
-    public Country findById(long id) {
+    public Country findById(Long id) {
         return findCountryById(id);
     }
 
@@ -78,7 +80,7 @@ public class CountryMemoryCollectionRepo implements CountryRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Country found = findCountryById(id);
 
         if (found != null) {

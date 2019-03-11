@@ -3,7 +3,7 @@ package com.roman.shilov.hw10.travelagency.cities.repo.impl;
 import com.roman.shilov.hw10.travelagency.cities.domain.City;
 import com.roman.shilov.hw10.travelagency.cities.repo.CityRepo;
 import com.roman.shilov.hw10.travelagency.cities.search.CitySearchCondition;
-import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.solutions.utils.ArrayUtils;
 
 import java.util.*;
@@ -19,25 +19,27 @@ public class CityMemoryArrayRepo implements CityRepo {
     private int cityIndex = -1;
 
 
+
     @Override
-    public void add(City city) {
+    public City findById(Long id) {
+        Integer cityIndex = findCityIndexId(id);
+        if(cityIndex != null){
+            return cities[cityIndex];
+        }
+        return null;
+    }
+
+    @Override
+    public void insert(City city) {
         if(cityIndex == cities.length - 1){
             City[] newArrCities = new City[cities.length * 2];
             System.arraycopy(cities, 0, newArrCities, 0, cities.length);
             cities = newArrCities;
         }
 
+        city.setId(SequenceCreator.getNextId());
         cityIndex++;
         cities[cityIndex] = city;
-    }
-
-    @Override
-    public City findById(long id) {
-        Integer cityIndex = findCityIndexId(id);
-        if(cityIndex != null){
-            return cities[cityIndex];
-        }
-        return null;
     }
 
     @Override
@@ -100,7 +102,7 @@ public class CityMemoryArrayRepo implements CityRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Integer cityIndex = findCityIndexId(id);
         if(cityIndex != null){
             deleteCityByIndex(cityIndex);

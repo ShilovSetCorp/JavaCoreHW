@@ -25,14 +25,14 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void add(Country country) {
+    public void insert(Country country) {
         country.setId(SequenceCreator.getNextId());
-        countryRepo.add(country);
+        countryRepo.insert(country);
 
         if(country.getCities() != null){
             for(City city : country.getCities()){
                 city.setId(SequenceCreator.getNextId());
-                cityRepo.add(city);
+                cityRepo.insert(city);
             }
         }
     }

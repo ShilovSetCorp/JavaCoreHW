@@ -1,6 +1,7 @@
 package com.roman.shilov.hw10.travelagency.countries.repo.impl;
 
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw10.travelagency.countries.domain.Country;
@@ -19,19 +20,20 @@ public class CountryMemoryArrayRepo implements CountryRepo {
     private int countryIndex = -1;
 
     @Override
-    public void add(Country country) {
+    public void insert(Country country) {
         if(countryIndex == countries.length - 1) {
             Country[] newArrCountries = new Country[countries.length * 2];
             System.arraycopy(countries,0, newArrCountries, 0, countries.length);
             countries = newArrCountries;
         }
 
+        country.setId(SequenceCreator.getNextId());
         countryIndex++;
         countries[countryIndex] = country;
     }
 
     @Override
-    public Country findById(long id) {
+    public Country findById(Long id) {
         Integer countryIndex = findCountryIndexById(id);
         if(countryIndex != null){
             return countries[countryIndex];
@@ -100,7 +102,7 @@ public class CountryMemoryArrayRepo implements CountryRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Integer countryIndex = findCountryIndexById(id);
         if(countryIndex != null){
             deleteCountryByIndex(countryIndex);

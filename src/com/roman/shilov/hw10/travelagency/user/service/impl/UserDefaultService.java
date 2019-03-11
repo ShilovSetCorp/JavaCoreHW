@@ -16,9 +16,8 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void add(User user) {
-        user.setId(SequenceCreator.getNextId());
-        repo.add(user);
+    public void insert(User user) {
+        repo.insert(user);
     }
 
     @Override

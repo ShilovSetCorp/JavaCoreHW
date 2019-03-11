@@ -1,5 +1,6 @@
 package com.roman.shilov.hw10.travelagency.user.repo.impl;
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw10.travelagency.user.domain.User;
@@ -8,7 +9,7 @@ import com.roman.shilov.hw10.travelagency.user.search.UserSearchCondition;
 
 import java.util.*;
 
-import static com.roman.shilov.hw9.travelagency.storage.Storage.users;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.users;
 
 
 public class UserMemoryArrayRepo implements UserRepo {
@@ -16,19 +17,20 @@ public class UserMemoryArrayRepo implements UserRepo {
     private int userIndex = -1;
 
     @Override
-    public void add(User user) {
+    public void insert(User user) {
         if(userIndex == users.length - 1){
             User[] newArrUsers = new User[users.length * 2];
             System.arraycopy(users, 0, newArrUsers, 0, users.length);
             users = newArrUsers;
         }
 
+        user.setId(SequenceCreator.getNextId());
         userIndex++;
         users[userIndex] = user;
     }
 
     @Override
-    public User findById(long id) {
+    public User findById(Long id) {
         Integer userIndex = findUserIndexById(id);
         if(userIndex != null){
             return users[userIndex];
@@ -72,37 +74,6 @@ public class UserMemoryArrayRepo implements UserRepo {
             if (resultIndex > 0) {
                 User[] toReturn = new User[resultIndex];
                 System.arraycopy(result, 0, toReturn, 0, resultIndex);
-
-                if(searchCondition.getOrderType() != null) {
-                    if (searchCondition.getOrderType().equals(OrderType.ASC)) {
-                        Arrays.sort(toReturn, new Comparator<User>() {
-                            @Override
-                            public int compare(User o1, User o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return 1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return -1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    } else {
-                        Arrays.sort(toReturn, new Comparator<User>() {
-                            @Override
-                            public int compare(User o1, User o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return -1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return 1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    }
-                }
-
                 return new ArrayList<>(Arrays.asList(toReturn));
             }
         }
@@ -118,7 +89,7 @@ public class UserMemoryArrayRepo implements UserRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Integer userIndex = findUserIndexById(id);
         if(userIndex != null){
             deleteUserByIndex(userIndex);

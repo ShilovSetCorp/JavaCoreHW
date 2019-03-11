@@ -1,5 +1,6 @@
 package com.roman.shilov.hw10.travelagency.order.repo.impl;
 
+import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw10.travelagency.order.domain.Order;
@@ -8,7 +9,7 @@ import com.roman.shilov.hw10.travelagency.order.search.OrderSearchCondition;
 
 import java.util.*;
 
-import static com.roman.shilov.hw9.travelagency.storage.Storage.orders;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.orders;
 
 
 public class OrderMemoryArrayRepo implements OrderRepo {
@@ -64,36 +65,6 @@ public class OrderMemoryArrayRepo implements OrderRepo {
                 Order[] toReturn = new Order[resultIndex];
                 System.arraycopy(result, 0, toReturn, 0, resultIndex);
 
-                if(searchCondition.getOrderType() != null) {
-                    if (searchCondition.getOrderType().equals(OrderType.ASC)) {
-                        Arrays.sort(toReturn, new Comparator<Order>() {
-                            @Override
-                            public int compare(Order o1, Order o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return 1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return -1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    } else {
-                        Arrays.sort(toReturn, new Comparator<Order>() {
-                            @Override
-                            public int compare(Order o1, Order o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return -1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return 1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    }
-                }
-
                 return new ArrayList<>(Arrays.asList(toReturn));
             }
         }
@@ -111,19 +82,20 @@ public class OrderMemoryArrayRepo implements OrderRepo {
     }
 
     @Override
-    public void add(Order order) {
+    public void insert(Order order) {
         if(orderIndex == orders.length - 1) {
             Order[] newArrOrders = new Order[orders.length * 2];
             System.arraycopy(orders,0, newArrOrders, 0, orders.length);
             orders = newArrOrders;
         }
 
+        order.setId(SequenceCreator.getNextId());
         orderIndex++;
         orders[orderIndex] = order;
     }
 
     @Override
-    public Order findById(long id) {
+    public Order findById(Long id) {
         Integer orderIndex = findOrderIndexById(id);
         if(orderIndex != null){
             return orders[orderIndex];
@@ -132,7 +104,7 @@ public class OrderMemoryArrayRepo implements OrderRepo {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Integer orderIndex = findOrderIndexById(id);
 
         if(orderIndex != null){
