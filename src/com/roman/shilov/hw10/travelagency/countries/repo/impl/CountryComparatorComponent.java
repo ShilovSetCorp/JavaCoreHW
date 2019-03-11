@@ -6,7 +6,6 @@ import com.roman.shilov.hw10.travelagency.countries.domain.Country;
 import static com.roman.shilov.hw10.travelagency.countries.search.CountryOrderByField.NAME;
 import static com.roman.shilov.hw10.travelagency.countries.search.CountryOrderByField.LANGUAGE;
 import static com.roman.shilov.hw10.travelagency.common.buisness.repo.memory.CommonComparatorHolder.getComparatorForNullableStrings;
-import static com.roman.shilov.hw10.travelagency.common.buisness.repo.memory.CommonComparatorHolder.getIntegerComparator;
 
 import java.util.*;
 

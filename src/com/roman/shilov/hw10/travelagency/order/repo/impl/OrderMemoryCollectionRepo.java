@@ -1,7 +1,6 @@
 package com.roman.shilov.hw10.travelagency.order.repo.impl;
 
 import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
-import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.order.domain.Order;
 import com.roman.shilov.hw10.travelagency.order.repo.OrderRepo;
 import com.roman.shilov.hw10.travelagency.order.search.OrderSearchCondition;
@@ -15,6 +14,8 @@ import static com.roman.shilov.hw10.travelagency.storage.Storage.ordersList;
 
 
 public class OrderMemoryCollectionRepo implements OrderRepo {
+    private OrdersOrderingComponent orderingComponent = new OrdersOrderingComponent();
+
     @Override
     public void insert(Order order) {
         order.setId(SequenceCreator.getNextId());
@@ -31,45 +32,55 @@ public class OrderMemoryCollectionRepo implements OrderRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByUser = searchCondition.getUser() != null;
-            boolean searchByCountry = searchCondition.getCountry() != null;
-            boolean searchByCity = searchCondition.getCity() != null;
-            boolean searchByDescription = searchCondition.getDescription() != null;
-            boolean searchByPrice = searchCondition.getPrice() > 0;
+            List<Order> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
 
-            List<Order> result = new ArrayList<>();
-            for (Order order : ordersList) {
-                if (order != null) {
-                    boolean found = true;
-                    if (searchByUser) {
-                        found = searchCondition.getUser().equals(order.getUser());
-                    }
-
-                    if (found && searchByCountry) {
-                        found = searchCondition.getCountry().equals(order.getCountry());
-                    }
-
-                    if (found && searchByCity) {
-                        found = searchCondition.getCity().equals(order.getCity());
-                    }
-
-                    if (found && searchByDescription) {
-                        found = searchCondition.getDescription().equals(order.getDescription());
-                    }
-
-                    if (found && searchByPrice) {
-                        found = searchCondition.getPrice() == order.getPrice();
-                    }
-
-                    if (found) {
-                        result.add(order);
-                    }
-                }
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
             }
-
 
             return result;
         }
+    }
+
+    private List<Order> doSearch(OrderSearchCondition searchCondition){
+
+        boolean searchByUser = searchCondition.getUser() != null;
+        boolean searchByCountry = searchCondition.getCountry() != null;
+        boolean searchByCity = searchCondition.getCity() != null;
+        boolean searchByDescription = searchCondition.getDescription() != null;
+        boolean searchByPrice = searchCondition.getPrice() > 0;
+
+        List<Order> result = new ArrayList<>();
+        for (Order order : ordersList) {
+            if (order != null) {
+                boolean found = true;
+                if (searchByUser) {
+                    found = searchCondition.getUser().equals(order.getUser());
+                }
+
+                if (found && searchByCountry) {
+                    found = searchCondition.getCountry().equals(order.getCountry());
+                }
+
+                if (found && searchByCity) {
+                    found = searchCondition.getCity().equals(order.getCity());
+                }
+
+                if (found && searchByDescription) {
+                    found = searchCondition.getDescription().equals(order.getDescription());
+                }
+
+                if (found && searchByPrice) {
+                    found = searchCondition.getPrice() == order.getPrice();
+                }
+
+                if (found) {
+                    result.add(order);
+                }
+            }
+        }
+        return result;
     }
 
     @Override

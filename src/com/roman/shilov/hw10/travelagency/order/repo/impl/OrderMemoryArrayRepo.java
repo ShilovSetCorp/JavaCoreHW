@@ -1,11 +1,11 @@
 package com.roman.shilov.hw10.travelagency.order.repo.impl;
 
 import com.roman.shilov.hw10.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
-import com.roman.shilov.hw10.travelagency.common.buisness.search.OrderType;
 import com.roman.shilov.hw10.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw10.travelagency.order.domain.Order;
 import com.roman.shilov.hw10.travelagency.order.repo.OrderRepo;
 import com.roman.shilov.hw10.travelagency.order.search.OrderSearchCondition;
+
 
 import java.util.*;
 
@@ -14,6 +14,7 @@ import static com.roman.shilov.hw10.travelagency.storage.Storage.orders;
 
 public class OrderMemoryArrayRepo implements OrderRepo {
     private static final Order[] EMPTY_ORDERS_ARR = new Order[0];
+    private OrdersOrderingComponent orderingComponent = new OrdersOrderingComponent();
     private int orderIndex = -1;
 
     @Override
@@ -21,6 +22,18 @@ public class OrderMemoryArrayRepo implements OrderRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
+            List<Order> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
+            }
+
+            return result;
+        }
+    }
+
+    private List<Order> doSearch(OrderSearchCondition searchCondition){
             boolean searchByUser = searchCondition.getUser() != null;
             boolean searchByCountry = searchCondition.getCountry() != null;
             boolean searchByCity = searchCondition.getCity() != null;
@@ -64,10 +77,8 @@ public class OrderMemoryArrayRepo implements OrderRepo {
             if (resultIndex > 0) {
                 Order[] toReturn = new Order[resultIndex];
                 System.arraycopy(result, 0, toReturn, 0, resultIndex);
-
                 return new ArrayList<>(Arrays.asList(toReturn));
             }
-        }
         return Collections.emptyList();
     }
 

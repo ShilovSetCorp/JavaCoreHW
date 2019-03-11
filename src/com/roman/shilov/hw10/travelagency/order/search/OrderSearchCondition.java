@@ -11,6 +11,15 @@ public class OrderSearchCondition extends BaseSearchConditition {
     private User user;
     private String description;
     private int price;
+    private OrdersOrderByField orderByField;
+
+    public OrdersOrderByField getOrderByField() {
+        return orderByField;
+    }
+
+    public void setOrderByField(OrdersOrderByField orderByField) {
+        this.orderByField = orderByField;
+    }
 
     public City getCity() {
         return city;
