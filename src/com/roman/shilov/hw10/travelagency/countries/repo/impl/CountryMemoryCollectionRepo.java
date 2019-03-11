@@ -10,11 +10,13 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.roman.shilov.hw9.travelagency.common.solutions.utils.StringUtils.isNotBlank;
-import static com.roman.shilov.hw9.travelagency.storage.Storage.countryList;
+import static com.roman.shilov.hw10.travelagency.common.solutions.utils.StringUtils.isNotBlank;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.countryList;
 
 
 public class CountryMemoryCollectionRepo implements CountryRepo {
+    private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
+
     @Override
     public void add(Country country) {
         countryList.add(country);
@@ -30,59 +32,41 @@ public class CountryMemoryCollectionRepo implements CountryRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByLanguage = isNotBlank(searchCondition.getLanguage());
-            boolean searchByName = isNotBlank(searchCondition.getName());
+            List<Country> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
 
-            List<Country> result = new ArrayList<>();
-            for (Country country : countryList) {
-                if (country != null) {
-                    boolean found = true;
-                    if (searchByLanguage) {
-                        found = searchCondition.getLanguage().equals(country.getLanguage());
-                    }
-
-                    if (found && searchByName) {
-                        found = searchCondition.getName().equals(country.getName());
-                    }
-
-                    if (found) {
-                        result.add(country);
-                    }
-                }
-            }
-
-            if(searchCondition.getOrderType() != null){
-                if(searchCondition.getOrderType().equals(OrderType.ASC)){
-                    result.sort(new Comparator<Country>() {
-                        @Override
-                        public int compare(Country o1, Country o2) {
-                            if(o1.getId() > o2.getId()){
-                                return 1;
-                            }else if(o1.getId() < o2.getId()){
-                                return -1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }else {
-                    result.sort(new Comparator<Country>() {
-                        @Override
-                        public int compare(Country o1, Country o2) {
-                            if(o1.getId() > o2.getId()){
-                                return -1;
-                            }else if(o1.getId() < o2.getId()){
-                                return 1;
-                            }else {
-                                return 0;
-                            }
-                        }
-                    });
-                }
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
             }
 
             return result;
         }
+    }
+
+    private List<Country> doSearch(CountrySearchCondition searchCondition){
+
+        boolean searchByLanguage = isNotBlank(searchCondition.getLanguage());
+        boolean searchByName = isNotBlank(searchCondition.getName());
+
+        List<Country> result = new ArrayList<>();
+        for (Country country : countryList) {
+            if (country != null) {
+                boolean found = true;
+                if (searchByLanguage) {
+                    found = searchCondition.getLanguage().equals(country.getLanguage());
+                }
+
+                if (found && searchByName) {
+                    found = searchCondition.getName().equals(country.getName());
+                }
+
+                if (found) {
+                    result.add(country);
+                }
+            }
+        }
+
+        return result;
     }
 
     @Override

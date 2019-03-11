@@ -15,6 +15,7 @@ import static com.roman.shilov.hw10.travelagency.storage.Storage.cities;
 public class CityMemoryArrayRepo implements CityRepo {
 
     private static final City[] EMPTY_CITIES_ARR = new City[0];
+    private CityOrderingComponent orderingComponent = new CityOrderingComponent();
     private int cityIndex = -1;
 
 
@@ -44,67 +45,50 @@ public class CityMemoryArrayRepo implements CityRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByPopulation = searchCondition.getPopulation() > 0;
+            List<City> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
 
-            boolean searchByName = isNotBlank(searchCondition.getName());
-
-            City[] result = new City[cities.length];
-            int resultIndex = 0;
-
-            for (City city : cities) {
-                if (city != null) {
-                    boolean found = true;
-
-                    if (searchByPopulation) {
-                        found = searchCondition.getPopulation() == city.getPopulation();
-                    }
-
-                    if (found && searchByName) {
-                        found = searchCondition.getName().equals(city.getName());
-                    }
-
-                    if (found) {
-                        result[resultIndex] = city;
-                        resultIndex++;
-                    }
-                }
+            if(needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
             }
 
-            if (resultIndex > 0) {
-                City toReturn[] = new City[resultIndex];
-                System.arraycopy(result, 0, toReturn, 0, resultIndex);
-                if(searchCondition.getOrderType() != null) {
-                    if (searchCondition.getOrderType().equals(OrderType.ASC)) {
-                        Arrays.sort(toReturn, new Comparator<City>() {
-                            @Override
-                            public int compare(City o1, City o2) {
-                                if(o1.getId() > o2.getId()){
-                                    return 1;
-                                }else if(o1.getId() < o2.getId()){
-                                    return -1;
-                                }else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    }else {
-                        Arrays.sort(toReturn, new Comparator<City>() {
-                            @Override
-                            public int compare(City o1, City o2) {
-                                if(o1.getId() > o2.getId()){
-                                    return -1;
-                                }else if(o1.getId() < o2.getId()){
-                                    return 1;
-                                }else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    }
+            return result;
+        }
+    }
+
+    private List<City> doSearch(CitySearchCondition searchCondition){
+        boolean searchByPopulation = searchCondition.getPopulation() > 0;
+
+        boolean searchByName = isNotBlank(searchCondition.getName());
+
+        City[] result = new City[cities.length];
+        int resultIndex = 0;
+
+        for (City city : cities) {
+            if (city != null) {
+                boolean found = true;
+
+                if (searchByPopulation) {
+                    found = searchCondition.getPopulation() == city.getPopulation();
                 }
-                return new ArrayList<>(Arrays.asList(toReturn));
+
+                if (found && searchByName) {
+                    found = searchCondition.getName().equals(city.getName());
+                }
+
+                if (found) {
+                    result[resultIndex] = city;
+                    resultIndex++;
+                }
             }
         }
+
+        if (resultIndex > 0) {
+            City toReturn[] = new City[resultIndex];
+            System.arraycopy(result, 0, toReturn, 0, resultIndex);
+            return new ArrayList<>(Arrays.asList(toReturn));
+        }
+
         return Collections.emptyList();
     }
 

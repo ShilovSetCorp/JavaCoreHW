@@ -75,7 +75,7 @@ public class CityComparatorComponent {
                     }
                 }
 
-                return 0;
+                return result;
             }
         };
     }

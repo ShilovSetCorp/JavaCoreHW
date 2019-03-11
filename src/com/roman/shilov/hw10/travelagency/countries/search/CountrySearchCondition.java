@@ -5,6 +5,15 @@ import com.roman.shilov.hw10.travelagency.common.buisness.search.BaseSearchCondi
 public class CountrySearchCondition extends BaseSearchConditition {
     private String name;
     private String language;
+    private CountryOrderByField orderByField;
+
+    public CountryOrderByField getOrderByField() {
+        return orderByField;
+    }
+
+    public void setOrderByField(CountryOrderByField orderByField) {
+        this.orderByField = orderByField;
+    }
 
     public String getName() {
         return name;
@@ -20,5 +29,9 @@ public class CountrySearchCondition extends BaseSearchConditition {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+    public boolean needOrdering(){
+        return super.needOrdering() && orderByField != null;
     }
 }

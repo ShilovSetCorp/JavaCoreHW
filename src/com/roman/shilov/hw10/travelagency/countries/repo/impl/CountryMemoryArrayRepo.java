@@ -9,12 +9,13 @@ import com.roman.shilov.hw10.travelagency.countries.search.CountrySearchConditio
 
 import java.util.*;
 
-import static com.roman.shilov.hw9.travelagency.common.solutions.utils.StringUtils.isNotBlank;
-import static com.roman.shilov.hw9.travelagency.storage.Storage.countries;
+import static com.roman.shilov.hw10.travelagency.common.solutions.utils.StringUtils.isNotBlank;
+import static com.roman.shilov.hw10.travelagency.storage.Storage.countries;
 
 
 public class CountryMemoryArrayRepo implements CountryRepo {
     private static final Country[] EMPTY_COUNTRIES_ARR = new Country[0];
+    private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
     private int countryIndex = -1;
 
     @Override
@@ -44,68 +45,48 @@ public class CountryMemoryArrayRepo implements CountryRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByLanguage = isNotBlank(searchCondition.getLanguage());
+            List<Country> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
 
-            boolean searchByName = isNotBlank(searchCondition.getName());
-
-            Country[] result = new Country[countries.length];
-            int resultIndex = 0;
-
-            for (Country country : countries) {
-                if (country != null) {
-                    boolean found = true;
-
-                    if (searchByLanguage) {
-                        found = searchCondition.getLanguage().equals(country.getLanguage());
-                    }
-
-                    if (found && searchByName) {
-                        found = searchCondition.getName().equals(country.getName());
-                    }
-
-                    if (found) {
-                        result[resultIndex] = country;
-                        resultIndex++;
-                    }
-                }
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
             }
 
-            if (resultIndex > 0) {
-                Country toReturn[] = new Country[resultIndex];
-                System.arraycopy(result, 0, toReturn, 0, resultIndex);
+            return result;
+        }
+    }
 
-                if(searchCondition.getOrderType() != null) {
-                    if (searchCondition.getOrderType().equals(OrderType.ASC)) {
-                        Arrays.sort(toReturn, new Comparator<Country>() {
-                            @Override
-                            public int compare(Country o1, Country o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return 1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return -1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    } else {
-                        Arrays.sort(toReturn, new Comparator<Country>() {
-                            @Override
-                            public int compare(Country o1, Country o2) {
-                                if (o1.getId() > o2.getId()) {
-                                    return -1;
-                                } else if (o1.getId() < o2.getId()) {
-                                    return 1;
-                                } else {
-                                    return 0;
-                                }
-                            }
-                        });
-                    }
+    private List<Country> doSearch(CountrySearchCondition searchCondition){
+        boolean searchByLanguage = isNotBlank(searchCondition.getLanguage());
+
+        boolean searchByName = isNotBlank(searchCondition.getName());
+
+        Country[] result = new Country[countries.length];
+        int resultIndex = 0;
+
+        for (Country country : countries) {
+            if (country != null) {
+                boolean found = true;
+
+                if (searchByLanguage) {
+                    found = searchCondition.getLanguage().equals(country.getLanguage());
                 }
 
-                return new ArrayList<>(Arrays.asList(toReturn));
+                if (found && searchByName) {
+                    found = searchCondition.getName().equals(country.getName());
+                }
+
+                if (found) {
+                    result[resultIndex] = country;
+                    resultIndex++;
+                }
             }
+        }
+
+        if (resultIndex > 0) {
+            Country toReturn[] = new Country[resultIndex];
+            System.arraycopy(result, 0, toReturn, 0, resultIndex);
+            return new ArrayList<>(Arrays.asList(toReturn));
         }
         return Collections.emptyList();
     }
