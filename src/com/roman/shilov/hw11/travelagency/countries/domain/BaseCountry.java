@@ -1,15 +1,35 @@
-package com.roman.shilov.hw6.countries.domain;
+package com.roman.shilov.hw11.travelagency.countries.domain;
 
-import com.roman.shilov.hw6.cities.domain.City;
-import com.roman.shilov.hw6.common.buisness.domain.BaseDomain;
+import com.roman.shilov.hw11.travelagency.cities.domain.City;
+import com.roman.shilov.hw11.travelagency.common.buisness.domain.BaseDomain;
 
 
-public abstract class Country extends BaseDomain {
+public abstract class BaseCountry extends BaseDomain {
     private String name;
     private String language;
     private City[] cities;
+    private CountryType type;
 
-    public Country() {
+    public BaseCountry(String name, String language, CountryType type) {
+        this.name = name;
+        this.language = language;
+        this.type = type;
+    }
+
+    public CountryType getType() {
+        return type;
+    }
+
+    public void setType(CountryType type) {
+        this.type = type;
+    }
+
+    public BaseCountry(String name, String language) {
+        this.name = name;
+        this.language = language;
+    }
+
+    public BaseCountry() {
     }
 
     public String getName() {

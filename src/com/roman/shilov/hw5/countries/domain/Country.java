@@ -38,7 +38,7 @@ public abstract class Country extends BaseDomain {
 
     @Override
     public String toString() {
-        return "Country{\n" +
+        return "BaseCountry{\n" +
                 ", id=" + id + '\'' +
                 "name='" + name + '\'' +
                 ", language='" + language + '\'' +
