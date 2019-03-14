@@ -4,8 +4,13 @@ package com.roman.shilov.hw11.travelagency.countries.repo.impl;
 import com.roman.shilov.hw11.travelagency.common.buisness.application.sequencecreator.SequenceCreator;
 import com.roman.shilov.hw11.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw11.travelagency.countries.domain.BaseCountry;
+import com.roman.shilov.hw11.travelagency.countries.domain.ColdCountry;
+import com.roman.shilov.hw11.travelagency.countries.domain.Country;
+import com.roman.shilov.hw11.travelagency.countries.domain.HotCountry;
 import com.roman.shilov.hw11.travelagency.countries.repo.CountryRepo;
+import com.roman.shilov.hw11.travelagency.countries.search.ColdCountrySearchCondition;
 import com.roman.shilov.hw11.travelagency.countries.search.CountrySearchCondition;
+import com.roman.shilov.hw11.travelagency.countries.search.HotCountrySearchCondition;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -62,8 +67,16 @@ public class CountryMemoryArrayRepo implements CountryRepo {
 
     private List<BaseCountry> doSearch(CountrySearchCondition searchCondition){
         boolean searchByLanguage = isNotBlank(searchCondition.getLanguage());
-
         boolean searchByName = isNotBlank(searchCondition.getName());
+        boolean searchByPhoneCode = isNotBlank(searchCondition.getPhoneCode());
+
+        boolean searchByAverageTemperature = false;
+        boolean searchByAverageSnowLevel = false;
+        if(searchCondition instanceof HotCountrySearchCondition){
+            searchByAverageTemperature = ((HotCountrySearchCondition) searchCondition).getAverageTemp() > 0;
+        }else if(searchCondition instanceof ColdCountrySearchCondition){
+            searchByAverageSnowLevel = ((ColdCountrySearchCondition) searchCondition).getAverageSnowLevel() > 0;
+        }
 
         BaseCountry[] result = new BaseCountry[countries.length];
         int resultIndex = 0;
@@ -80,10 +93,24 @@ public class CountryMemoryArrayRepo implements CountryRepo {
                     found = searchCondition.getName().equals(baseCountry.getName());
                 }
 
+                if (found && searchByPhoneCode){
+                    found = searchCondition.getPhoneCode().equals(((Country)baseCountry).getTelephoneCode());
+                }
+
+                if(found && searchByAverageTemperature &&(baseCountry instanceof HotCountry)){
+                    found = ((HotCountrySearchCondition)searchCondition).getAverageTemp() == ((HotCountry)baseCountry).getAverageTemp();
+                }
+
+                if(found && searchByAverageSnowLevel && (baseCountry instanceof ColdCountry)){
+                    found = ((ColdCountrySearchCondition)searchCondition).getAverageSnowLevel() == ((ColdCountry)baseCountry).getAverageSnowLevel();
+                }
+
                 if (found) {
                     result[resultIndex] = baseCountry;
                     resultIndex++;
                 }
+
+
             }
         }
 

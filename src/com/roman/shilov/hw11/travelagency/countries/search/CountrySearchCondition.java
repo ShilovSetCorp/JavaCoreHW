@@ -5,6 +5,16 @@ import com.roman.shilov.hw11.travelagency.common.buisness.search.BaseSearchCondi
 public class CountrySearchCondition extends BaseSearchConditition {
     private String name;
     private String language;
+    private String phoneCode;
+
+    public String getPhoneCode() {
+        return phoneCode;
+    }
+
+    public void setPhoneCode(String phoneCode) {
+        this.phoneCode = phoneCode;
+    }
+
     private CountryOrderByField orderByField;
 
     public CountryOrderByField getOrderByField() {
