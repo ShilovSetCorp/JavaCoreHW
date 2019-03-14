@@ -14,6 +14,8 @@ import java.util.List;
 import static com.roman.shilov.hw10.travelagency.storage.Storage.userList;
 
 public class UserMemoryCollectionRepo implements UserRepo {
+    private UserOrderingComponent orderingComponent = new UserOrderingComponent();
+
     @Override
     public void insert(User user) {
         user.setId(SequenceCreator.getNextId());
@@ -30,31 +32,39 @@ public class UserMemoryCollectionRepo implements UserRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByName = searchCondition.getName() != null;
-            boolean searchByLast = searchCondition.getLast() != null;
+            List<User> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
 
-            List<User> result = new ArrayList<>();
-            for (User user : userList) {
-                if (user != null) {
-                    boolean found = true;
-                    if (searchByName) {
-                        found = searchCondition.getName().equals(user.getName());
-                    }
-
-                    if (found && searchByLast) {
-                        found = searchCondition.getLast().equals(user.getLast());
-                    }
-
-
-                    if (found) {
-                       result.add(user);
-                    }
-                }
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
             }
-
 
             return result;
         }
+    }
+
+    private List<User> doSearch(UserSearchCondition searchCondition){
+        boolean searchByName = searchCondition.getName() != null;
+        boolean searchByLast = searchCondition.getLast() != null;
+
+        List<User> result = new ArrayList<>();
+        for (User user : userList) {
+            if (user != null) {
+                boolean found = true;
+                if (searchByName) {
+                    found = searchCondition.getName().equals(user.getName());
+                }
+
+                if (found && searchByLast) {
+                    found = searchCondition.getLast().equals(user.getLast());
+                }
+
+                if (found) {
+                   result.add(user);
+                }
+            }
+        }
+        return result;
     }
 
     @Override

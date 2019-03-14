@@ -14,6 +14,7 @@ import static com.roman.shilov.hw10.travelagency.storage.Storage.users;
 
 public class UserMemoryArrayRepo implements UserRepo {
     private static final User[] EMPTY_USER_ARR = new User[0];
+    private UserOrderingComponent orderingComponent = new UserOrderingComponent();
     private int userIndex = -1;
 
     @Override
@@ -44,38 +45,48 @@ public class UserMemoryArrayRepo implements UserRepo {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
-            boolean searchByName = searchCondition.getName() != null;
-            boolean searchByLast = searchCondition.getLast() != null;
+            List<User> result = doSearch(searchCondition);
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
+            }
+
+            return result;
+        }
+    }
+
+    private List<User> doSearch(UserSearchCondition searchCondition){
+        boolean searchByName = searchCondition.getName() != null;
+        boolean searchByLast = searchCondition.getLast() != null;
+
+        User[] result = new User[users.length];
+        int resultIndex = 0;
+
+        for (User user : users) {
+            if (user != null) {
+                boolean found = true;
+
+                if (searchByName) {
+                    found = searchCondition.getName().equals(user.getName());
+                }
+
+                if (found && searchByLast) {
+                    found = searchCondition.getLast().equals(user.getLast());
+                }
 
 
-            User[] result = new User[users.length];
-            int resultIndex = 0;
-
-            for (User user : users) {
-                if (user != null) {
-                    boolean found = true;
-
-                    if (searchByName) {
-                        found = searchCondition.getName().equals(user.getName());
-                    }
-
-                    if (found && searchByLast) {
-                        found = searchCondition.getLast().equals(user.getLast());
-                    }
-
-
-                    if (found) {
-                        result[resultIndex] = user;
-                        resultIndex++;
-                    }
+                if (found) {
+                    result[resultIndex] = user;
+                    resultIndex++;
                 }
             }
+        }
 
-            if (resultIndex > 0) {
-                User[] toReturn = new User[resultIndex];
-                System.arraycopy(result, 0, toReturn, 0, resultIndex);
-                return new ArrayList<>(Arrays.asList(toReturn));
-            }
+        if (resultIndex > 0) {
+            User[] toReturn = new User[resultIndex];
+            System.arraycopy(result, 0, toReturn, 0, resultIndex);
+            return new ArrayList<>(Arrays.asList(toReturn));
         }
         return Collections.emptyList();
     }

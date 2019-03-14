@@ -6,6 +6,15 @@ public class UserSearchCondition extends BaseSearchConditition {
 
     private String name;
     private String last;
+    private UserOrderByField orderByField;
+
+    public UserOrderByField getOrderByField() {
+        return orderByField;
+    }
+
+    public void setOrderByField(UserOrderByField orderByField) {
+        this.orderByField = orderByField;
+    }
 
     public String getName() {
         return name;
