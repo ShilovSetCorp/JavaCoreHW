@@ -25,55 +25,56 @@ public class TravelAgencyDemo {
         static {
             ServiceSupplier.newSupplier(StorageType.MEMORY_COLLECTION);
         }
+
         private UserService userService = ServiceSupplier.setSupplier().getUserService();
         private OrderService orderService = ServiceSupplier.setSupplier().getOrderService();
         private CountryService countryService = ServiceSupplier.setSupplier().getCountryService();
         private CityService cityService = ServiceSupplier.setSupplier().getCityService();
 
-        private void addUsers(){
+        private void addUsers() {
             userService.insert(new User("Roma", "Shilov"));
             userService.insert(new User("Kostya", "Supov"));
             userService.insert(new User("Kostya", "Ignatev"));
             userService.insert(new User("Volodya", "Kuchman"));
         }
 
-        private void addCountriesAndCities(){
+        private void addCountriesAndCities() {
             Initilisator.readerFromFile();
 
         }
 
-        public void printUsers(){
+        public void printUsers() {
             userService.printAll();
         }
 
-        public void printCountries(){
+        public void printCountries() {
             countryService.printAll();
         }
 
 
-        public Collection<User> searchUser(String name){
+        public Collection<User> searchUser(String name) {
             UserSearchCondition usc = new UserSearchCondition();
             usc.setName(name);
             return userService.search(usc);
         }
 
-        public Collection<City> searchCity(String name){
+        public Collection<City> searchCity(String name) {
             CitySearchCondition csc = new CitySearchCondition();
             csc.setName(name);
             return cityService.search(csc);
         }
 
-        public Collection<BaseCountry> searchCountry(String name){
+        public Collection<BaseCountry> searchCountry(String name) {
             CountrySearchCondition csc = new CountrySearchCondition();
             csc.setName(name);
             return countryService.search(csc);
         }
 
-        public void makeOrders(){
+        public void makeOrders() {
             ArrayList<User> users = (ArrayList<User>) searchUser("Roma");
             ArrayList<BaseCountry> countries = (ArrayList<BaseCountry>) searchCountry("Sweden");
             ArrayList<City> city = (ArrayList<City>) searchCity("Stockholm");
-            orderService.insert(new Order(city.get(city.size()-1), countries.get(countries.size() - 1), users.get(users.size() - 1), 1200));
+            orderService.insert(new Order(city.get(city.size() - 1), countries.get(countries.size() - 1), users.get(users.size() - 1), 1200));
         }
 
     }

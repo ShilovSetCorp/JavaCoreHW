@@ -22,30 +22,29 @@ public class Initilisator {
     private static CityService cityService = ServiceSupplier.setSupplier().getCityService();
 
 
-
-    public static void readerFromFile(){
-        try(BufferedReader reader = new BufferedReader(new FileReader(new File(CITIES_COUNTRIES_PATH)))) {
+    public static void readerFromFile() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(CITIES_COUNTRIES_PATH)))) {
             String s;
-            while ((s = reader.readLine()) != null){
+            while ((s = reader.readLine()) != null) {
                 BaseCountry country = null;
                 List<City> cities = new ArrayList<>();
-                if("country".equals(s)){
+                if ("country".equals(s)) {
                     String[] countryFields = reader.readLine().split(" ");
 
-                    if("hot".equals(countryFields[0])) {
+                    if ("hot".equals(countryFields[0])) {
                         country = new HotCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]));
-                    }else if("cold".equals(countryFields[0])){
+                    } else if ("cold".equals(countryFields[0])) {
                         country = new ColdCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]), "polarnight".equals(countryFields[6]));
                     }
                 }
                 String cityString;
-                while ((cityString = reader.readLine()) != null && !"end country".equals(cityString)){
-                    City city = new City(cityString.split(" ")[0], Integer.parseInt(cityString.split(" ")[1]), "capital".compareToIgnoreCase(cityString.split(" ")[2])==0);
+                while ((cityString = reader.readLine()) != null && !"end country".equals(cityString)) {
+                    City city = new City(cityString.split(" ")[0], Integer.parseInt(cityString.split(" ")[1]), "capital".compareToIgnoreCase(cityString.split(" ")[2]) == 0);
                     cities.add(city);
                     cityService.insert(city);
                 }
 
-                if(country != null) {
+                if (country != null) {
                     country.setCities(cities);
                     countryService.insert(country);
                 }

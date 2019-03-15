@@ -1,9 +1,7 @@
 package com.roman.shilov.hw11.travelagency.countries.domain;
 
-import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.common.solutions.utils.*;
 
-import java.util.List;
 
 public class HotCountry extends BaseCountry {
     private Months hottestMonth;

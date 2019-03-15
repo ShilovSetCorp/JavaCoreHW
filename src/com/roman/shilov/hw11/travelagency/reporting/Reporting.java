@@ -16,9 +16,9 @@ public class Reporting {
 
     private OrderService orderService = ServiceSupplier.setSupplier().getOrderService();
 
-    public static void reportMaker(){
-        try(PrintWriter writer = new PrintWriter(new FileOutputStream(FILE_PATH))){
-            for(Order order : ordersList){
+    public static void reportMaker() {
+        try (PrintWriter writer = new PrintWriter(new FileOutputStream(FILE_PATH))) {
+            for (Order order : ordersList) {
                 String reportLine = order.getUser().toString() + ": \nCountry " + order.getBaseCountry().getName() + ", city: " + order.getCity().getName() + ", price: " + order.getPrice();
                 writer.println(reportLine);
             }

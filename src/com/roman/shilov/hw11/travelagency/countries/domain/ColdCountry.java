@@ -1,15 +1,11 @@
 package com.roman.shilov.hw11.travelagency.countries.domain;
 
-import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.common.solutions.utils.Months;
-
-import java.util.List;
 
 public class ColdCountry extends BaseCountry {
     private Months theMostSnowingMonth;
     private int averageSnowLevel;
     private boolean polarNight;
-
 
 
     public ColdCountry(String name, String language, String telephoneCode, Months theMostSnowingMonth, int averageSnowLevel, boolean polarNight) {
