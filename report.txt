@@ -1,0 +1,3 @@
+name: Roma
+last name: Shilov: 
+Country Sweden, city: Stockholm, price: 1200

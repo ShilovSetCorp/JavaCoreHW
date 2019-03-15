@@ -11,11 +11,27 @@ public abstract class BaseCountry extends BaseDomain {
     private String language;
     private List<City> cities;
     private CountryType type;
+    private String telephoneCode;
+
+    public String getTelephoneCode() {
+        return telephoneCode;
+    }
+
+    public void setTelephoneCode(String telephoneCode) {
+        this.telephoneCode = telephoneCode;
+    }
 
     public BaseCountry(String name, String language, CountryType type) {
         this.name = name;
         this.language = language;
         this.type = type;
+    }
+
+    public BaseCountry(String name, String language, CountryType type, String telephoneCode) {
+        this.name = name;
+        this.language = language;
+        this.type = type;
+        this.telephoneCode = telephoneCode;
     }
 
     public CountryType getType() {

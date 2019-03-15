@@ -35,7 +35,7 @@ public class Initilisator {
                     if("hot".equals(countryFields[0])) {
                         country = new HotCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]));
                     }else if("cold".equals(countryFields[0])){
-                        country = new ColdCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]));
+                        country = new ColdCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]), "polarnight".equals(countryFields[6]));
                     }
                 }
                 String cityString;

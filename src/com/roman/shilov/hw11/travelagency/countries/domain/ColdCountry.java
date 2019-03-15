@@ -1,15 +1,22 @@
 package com.roman.shilov.hw11.travelagency.countries.domain;
 
+import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.common.solutions.utils.Months;
 
-public class ColdCountry extends Country {
+import java.util.List;
+
+public class ColdCountry extends BaseCountry {
     private Months theMostSnowingMonth;
     private int averageSnowLevel;
+    private boolean polarNight;
 
-    public ColdCountry(String name, String language, String telephoneCode, Months theMostSnowingMonth, int averageSnowLevel) {
-        super(name, language, CountryType.COLD, telephoneCode, true);
+
+
+    public ColdCountry(String name, String language, String telephoneCode, Months theMostSnowingMonth, int averageSnowLevel, boolean polarNight) {
+        super(name, language, CountryType.COLD, telephoneCode);
         this.theMostSnowingMonth = theMostSnowingMonth;
         this.averageSnowLevel = averageSnowLevel;
+        this.polarNight = polarNight;
     }
 
     public Months getTheMostSnowingMonth() {

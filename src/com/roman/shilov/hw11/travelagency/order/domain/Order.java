@@ -15,6 +15,13 @@ public class Order extends BaseDomain {
     public Order() {
     }
 
+    public Order(City city, BaseCountry baseCountry, User user, int price) {
+        this.city = city;
+        this.baseCountry = baseCountry;
+        this.user = user;
+        this.price = price;
+    }
+
     public City getCity() {
         return city;
     }

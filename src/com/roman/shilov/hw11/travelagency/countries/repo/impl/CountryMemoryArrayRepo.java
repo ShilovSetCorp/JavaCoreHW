@@ -5,7 +5,6 @@ import com.roman.shilov.hw11.travelagency.common.buisness.application.sequencecr
 import com.roman.shilov.hw11.travelagency.common.solutions.utils.ArrayUtils;
 import com.roman.shilov.hw11.travelagency.countries.domain.BaseCountry;
 import com.roman.shilov.hw11.travelagency.countries.domain.ColdCountry;
-import com.roman.shilov.hw11.travelagency.countries.domain.Country;
 import com.roman.shilov.hw11.travelagency.countries.domain.HotCountry;
 import com.roman.shilov.hw11.travelagency.countries.repo.CountryRepo;
 import com.roman.shilov.hw11.travelagency.countries.search.ColdCountrySearchCondition;
@@ -94,7 +93,7 @@ public class CountryMemoryArrayRepo implements CountryRepo {
                 }
 
                 if (found && searchByPhoneCode){
-                    found = searchCondition.getPhoneCode().equals(((Country)baseCountry).getTelephoneCode());
+                    found = searchCondition.getPhoneCode().equals((baseCountry).getTelephoneCode());
                 }
 
                 if(found && searchByAverageTemperature &&(baseCountry instanceof HotCountry)){

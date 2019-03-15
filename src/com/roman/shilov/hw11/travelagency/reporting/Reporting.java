@@ -19,7 +19,7 @@ public class Reporting {
     public static void reportMaker(){
         try(PrintWriter writer = new PrintWriter(new FileOutputStream(FILE_PATH))){
             for(Order order : ordersList){
-                String reportLine = order.getUser().toString() + ": country: " + order.getBaseCountry() + ", city: " + ", price: " + order.getPrice();
+                String reportLine = order.getUser().toString() + ": \nCountry " + order.getBaseCountry().getName() + ", city: " + order.getCity().getName() + ", price: " + order.getPrice();
                 writer.println(reportLine);
             }
         } catch (FileNotFoundException e) {

@@ -1,9 +1,9 @@
 country
-cold Russia russian +7 JAN 4
+cold Russia russian +7 JAN 4 Nopolarnight
 Moscow 12000000 capital
 end country
 country
-cold Sweden swedish +58 FEB 8
+cold Sweden swedish +58 FEB 8 polarnight
 Stockholm 5000000 capital
 end country
 country

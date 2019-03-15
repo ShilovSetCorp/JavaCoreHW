@@ -1,4 +1,5 @@
-".idea" 
+.idea
 out/production/epam/META-INF/
-out/production/epam/resources/
+out/production/epam/resources//
+out/production/epam/com//
 report.txt
