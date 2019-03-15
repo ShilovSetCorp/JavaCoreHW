@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="08b93893-2333-4a1f-86a7-878c311cad87" name="Default Changelist" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/TravelAgencyDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="535">
+              <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resources/InitCitiesAndCountries.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/application/sequencecreator/SequenceCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="32" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserMemoryCollectionRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/service/impl/UserDefaultService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="18" column="46" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/impl/CountryDefaultService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/repo/UserRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/repo/impl/UserMemoryCollectionRepo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+              <folding>
+                <element signature="e#485#486#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/Initilisator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="42" column="119" selection-start-line="42" selection-start-column="119" selection-end-line="42" selection-end-column="119" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getNextId</find>
+      <find>getNextI</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>stuff</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\RomanSES\epam\src\com\roman\shilov\hw7\user</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/order/repo/impl/OrdersOrderingComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/order/repo/impl/OrderMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/order/repo/impl/OrderMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/search/UserOrderByField.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/search/UserSearchCondition.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/repo/impl/UserOrderingComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/repo/impl/UserComparatorComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/repo/impl/UserMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw10/travelagency/user/repo/impl/UserMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/repo/impl/OrderComparatorComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/repo/impl/OrderMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/repo/impl/OrderMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryComparatorComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/repo/impl/CityComparatorComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/repo/impl/CityMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/repo/impl/CityMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserComparatorComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserMemoryCollectionRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/CountryType.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/solutions/utils/Months.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/ColdCountry.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/HotCountry.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/exceptions/BasicTravelUncheckedException.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/exceptions/BasicTravelCheckedException.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/service/impl/OrderDefaultService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/HotCountrySearchCondition.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/ColdCountrySearchCondition.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/Country.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/CountrySearchCondition.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryMemoryArrayRepo.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/service/exceptions/UserStillHasOrdersException.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/exceptions/CountryIsContainedInSomeOrdersException.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/service/exceptions/CityIsContainedInSomeOrdersException.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/service/impl/UserDefaultService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/service/impl/CityDefaultService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/InitCountries.java" />
+        <option value="$PROJECT_DIR$/src/resourses/Init.txt" />
+        <option value="$PROJECT_DIR$/src/resourses/InitCities.txt" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/domain/City.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/InitCities.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/reporting/Reporting.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/solutions/service/BaseService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/BaseCountry.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/Initilisator.java" />
+        <option value="$PROJECT_DIR$/src/resources/InitCitiesAndCountries.txt" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw7/user/service/impl/UserDefaultService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/impl/CountryDefaultService.java" />
+        <option value="$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/TravelAgencyDemo.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="epam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epam" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="shilov" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="epam" type="b2602c69:ProjectViewProjectNode" />
+              <item name="epam" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552644274524" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/javacore-master (1)/javacore-master/src/ru/yusdm/javacore/lesson5oopinterface/autoservice/AutoServiceDemo.java" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RomanSES\epam\src\com\roman\shilov\hw11\travelagency" />
+      <recent name="C:\Users\RomanSES\epam\src\com\roman\shilov\hw10" />
+      <recent name="C:\Users\RomanSES\epam\src\com\roman\shilov\hw9" />
+      <recent name="C:\Users\RomanSES\epam\src\com\roman\shilov\hw7" />
+      <recent name="C:\Users\RomanSES\epam\src\com\roman\shilov\hw6" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.TravelAgencyDemo">
+    <configuration name="ArraySorter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.roman.shilov.hw8.ArraySorter" />
+      <module name="epam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roman.shilov.hw8.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="IntersectionDetector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.roman.shilov.hw9.intersection.IntersectionDetector" />
+      <module name="epam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roman.shilov.hw9.intersection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TravelAgencyDemo (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.roman.shilov.hw9.travelagency.TravelAgencyDemo" />
+      <module name="epam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roman.shilov.hw9.travelagency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TravelAgencyDemo (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.roman.shilov.hw10.travelagency.TravelAgencyDemo" />
+      <module name="epam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roman.shilov.hw10.travelagency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TravelAgencyDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.roman.shilov.hw11.travelagency.TravelAgencyDemo" />
+      <module name="epam" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.roman.shilov.hw11.travelagency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TravelAgencyDemo" />
+        <item itemvalue="Application.TravelAgencyDemo (3)" />
+        <item itemvalue="Application.IntersectionDetector" />
+        <item itemvalue="Application.TravelAgencyDemo (2)" />
+        <item itemvalue="Application.ArraySorter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="08b93893-2333-4a1f-86a7-878c311cad87" name="Default Changelist" comment="" />
+      <created>1550813632527</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550813632527</updated>
+    </task>
+    <task id="LOCAL-00001" summary="HW5 package added">
+      <created>1551092019266</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551092019266</updated>
+    </task>
+    <task id="LOCAL-00002" summary="some refactor done">
+      <created>1551093411216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551093411216</updated>
+    </task>
+    <task id="LOCAL-00003" summary="some refactor done part2">
+      <created>1551093622422</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551093622422</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Search condition added">
+      <created>1551095808286</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551095808286</updated>
+    </task>
+    <task id="LOCAL-00005" summary="HW6 service factory added">
+      <created>1551264947436</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551264947436</updated>
+    </task>
+    <task id="LOCAL-00006" summary="HW7 added Map to Enum">
+      <created>1551361558684</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551361558684</updated>
+    </task>
+    <task id="LOCAL-00007" summary="HW7 added getNextId method in class SequenceCreator and update method added to repo and service packages">
+      <created>1551425441862</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551425441862</updated>
+    </task>
+    <task id="LOCAL-00008" summary="HW7 Enum method fixed">
+      <created>1551428918203</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551428918203</updated>
+    </task>
+    <task id="LOCAL-00009" summary="HW8 Sorting string array with array list using comparator">
+      <created>1551680981981</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1551680981981</updated>
+    </task>
+    <task id="LOCAL-00010" summary="HW8 Sorting string array with array using merge sort algorithm">
+      <created>1551684657965</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551684657965</updated>
+    </task>
+    <task id="LOCAL-00011" summary="HW9 Sorting added to search condition; Intersection of two lists added to new package">
+      <created>1551862118990</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1551862118990</updated>
+    </task>
+    <task id="LOCAL-00012" summary="HW9 checked implementation">
+      <created>1551876979929</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1551876979929</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HW9 intersection with set">
+      <created>1551879645072</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1551879645072</updated>
+    </task>
+    <task id="LOCAL-00014" summary="HW9 intersection with set">
+      <created>1551955164126</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1551955164127</updated>
+    </task>
+    <task id="LOCAL-00015" summary="HW10 added simple and complex search and ordering for Cities and for Countries">
+      <created>1552287423719</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1552287423719</updated>
+    </task>
+    <task id="LOCAL-00016" summary="HW10 added generics to repo and service packages and move these packages to solutions package">
+      <created>1552304423068</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1552304423068</updated>
+    </task>
+    <task id="LOCAL-00017" summary="HW10 added complex search to orders">
+      <created>1552309923401</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1552309923401</updated>
+    </task>
+    <task id="LOCAL-00018" summary="HW10 added complex search to users">
+      <created>1552551493324</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1552551493324</updated>
+    </task>
+    <task id="LOCAL-00019" summary="HW11 added base classes for exceptions, new instances of countries">
+      <created>1552561654036</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1552561654036</updated>
+    </task>
+    <task id="LOCAL-00020" summary="HW11 edited country search condition and search method according to new country types">
+      <created>1552569041949</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1552569041949</updated>
+    </task>
+    <task id="LOCAL-00021" summary="HW11 edited user delete method, added user exception">
+      <created>1552571329488</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1552571329488</updated>
+    </task>
+    <task id="LOCAL-00022" summary="HW11 added gitignore, added init cities and countries from file, and writing report to file">
+      <created>1552644015515</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1552644015515</updated>
+    </task>
+    <task id="LOCAL-00023" summary="HW11 edited gitignore">
+      <created>1552644120117</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1552644120117</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23614073" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.30119178" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.38786566" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23347548" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.30119178" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="HW5 package added" />
+    <MESSAGE value="some refactor done" />
+    <MESSAGE value="some refactor done part2" />
+    <MESSAGE value="Search condition added" />
+    <MESSAGE value="HW6 service factory added" />
+    <MESSAGE value="HW7 added Map to Enum" />
+    <MESSAGE value="HW7 added getNextId method in class SequenceCreator and update method added to repo and service packages" />
+    <MESSAGE value="HW7 Enum method fixed" />
+    <MESSAGE value="HW8 Sorting string array with array list using comparator" />
+    <MESSAGE value="HW8 Sorting string array with array using merge sort algorithm" />
+    <MESSAGE value="HW9 Sorting added to search condition; Intersection of two lists added to new package" />
+    <MESSAGE value="HW9 checked implementation" />
+    <MESSAGE value="HW9 intersection with set" />
+    <MESSAGE value="HW10 added simple and complex search and ordering for Cities and for Countries" />
+    <MESSAGE value="HW10 added generics to repo and service packages and move these packages to solutions package" />
+    <MESSAGE value="HW10 added complex search to orders" />
+    <MESSAGE value="HW10 added complex search to users" />
+    <MESSAGE value="HW11 added base classes for exceptions, new instances of countries" />
+    <MESSAGE value="HW11 edited country search condition and search method according to new country types" />
+    <MESSAGE value="HW11 edited user delete method, added user exception" />
+    <MESSAGE value="HW11 added gitignore, added init cities and countries from file, and writing report to file" />
+    <MESSAGE value="HW11 edited gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW11 edited gitignore" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/solutions/utils/Months.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="65" selection-start-column="8" selection-end-column="65" />
+          <folding>
+            <element signature="e#160#161#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/domain/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/domain/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/CountryServiceCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/CountryOrderByField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/HotCountrySearchCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/ColdCountrySearchCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="19" />
+          <folding>
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#580#581#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/search/CountrySearchCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#461#462#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/domain/BaseDomain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/service/exceptions/UserStillHasOrdersException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding>
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/storage/Storage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/exceptions/BasicTravelUncheckedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#217#218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/service/UserServiceCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserMemoryArrayRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1097">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserComparatorComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-247">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/repo/impl/OrderMemoryCollectionRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-884">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/order/service/impl/OrderDefaultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#insert#0;class#OrderDefaultService#0" />
+            <element signature="method#findById#0;class#OrderDefaultService#0" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1165#1166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/exceptions/BasicTravelCheckedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding>
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/service/exceptions/CityIsContainedInSomeOrdersException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/exceptions/CountryIsContainedInSomeOrdersException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/service/impl/CityDefaultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/InitCountries.txt" />
+    <entry file="file://$PROJECT_DIR$/src/resources/InitCities.txt" />
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/InitCountries.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/InitCities.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/cities/domain/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="65" selection-start-line="10" selection-start-column="65" selection-end-line="10" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/service/impl/UserDefaultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2135#2136#0" expanded="true" />
+            <element signature="e#2186#2187#0" expanded="true" />
+            <element signature="e#2356#2357#0" expanded="true" />
+            <element signature="e#2387#2388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/reporting/Reporting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/io/BufferedReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1676">
+          <caret line="390" column="18" selection-start-line="390" selection-start-column="18" selection-end-line="390" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryComparatorComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryMemoryArrayRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-690">
+          <caret line="92" column="56" selection-start-line="92" selection-start-column="56" selection-end-line="92" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryOrderingComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/CountryType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/ColdCountry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <element signature="e#607#608#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+            <element signature="e#719#720#0" expanded="true" />
+            <element signature="e#781#782#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#921#922#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/HotCountry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/Country.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+          <folding>
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/solutions/service/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/solutions/repo/BaseRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="36" lean-forward="true" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/repo/impl/CountryMemoryCollectionRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/domain/BaseCountry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+            <element signature="e#1207#1208#0" expanded="true" />
+            <element signature="e#1255#1256#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/InitCitiesAndCountries.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/application/sequencecreator/SequenceCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/user/repo/impl/UserMemoryCollectionRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/service/impl/UserDefaultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/countries/service/impl/CountryDefaultService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="38" column="6" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/repo/UserRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw7/user/repo/impl/UserMemoryCollectionRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding>
+            <element signature="e#485#486#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/common/buisness/initialisation/Initilisator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="42" column="119" selection-start-line="42" selection-start-column="119" selection-end-line="42" selection-end-column="119" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/roman/shilov/hw11/travelagency/TravelAgencyDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
