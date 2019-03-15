@@ -3,11 +3,13 @@ package com.roman.shilov.hw11.travelagency.countries.domain;
 import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.common.buisness.domain.BaseDomain;
 
+import java.util.List;
+
 
 public abstract class BaseCountry extends BaseDomain {
     private String name;
     private String language;
-    private City[] cities;
+    private List<City> cities;
     private CountryType type;
 
     public BaseCountry(String name, String language, CountryType type) {
@@ -48,17 +50,17 @@ public abstract class BaseCountry extends BaseDomain {
         this.language = language;
     }
 
-    public City[] getCities() {
+    public List<City> getCities() {
         return cities;
     }
 
-    public void setCities(City[] cities) {
+    public void setCities(List<City> cities) {
         this.cities = cities;
     }
 
     @Override
     public String toString() {
-        return "BaseCountry{\n" +
+        return "Country{\n" +
                 ", id=" + id + '\'' +
                 "name='" + name + '\'' +
                 ", language='" + language + '\'' +

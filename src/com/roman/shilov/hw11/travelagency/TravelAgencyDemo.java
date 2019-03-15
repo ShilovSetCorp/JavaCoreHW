@@ -1,13 +1,12 @@
 package com.roman.shilov.hw11.travelagency;
 
-import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.cities.service.CityService;
 import com.roman.shilov.hw11.travelagency.common.buisness.application.StorageType;
 import com.roman.shilov.hw11.travelagency.common.buisness.application.servicefactory.ServiceSupplier;
-import com.roman.shilov.hw11.travelagency.countries.domain.BaseCountry;
-import com.roman.shilov.hw11.travelagency.countries.domain.ColdCountry;
+import com.roman.shilov.hw11.travelagency.common.buisness.initialisation.Initilisator;
 import com.roman.shilov.hw11.travelagency.countries.service.CountryService;
 import com.roman.shilov.hw11.travelagency.order.service.OrderService;
+import com.roman.shilov.hw11.travelagency.reporting.Reporting;
 import com.roman.shilov.hw11.travelagency.user.domain.User;
 import com.roman.shilov.hw11.travelagency.user.search.UserSearchCondition;
 import com.roman.shilov.hw11.travelagency.user.service.UserService;
@@ -32,16 +31,17 @@ public class TravelAgencyDemo {
             userService.insert(new User("Volodya", "Kuchman"));
         }
 
-        private void addCountry(){
-            BaseCountry switzerland = new ColdCountry();
-            City zurich = new City();
-            City davos = new City();
-            switzerland.setCities(new City[] {zurich, davos});
-            countryService.insert(switzerland);
+        private void addCountriesAndCities(){
+            Initilisator.readerFromFile();
+
         }
 
         public void printUsers(){
             userService.printAll();
+        }
+
+        public void printCountries(){
+            countryService.printAll();
         }
 
         public Collection<User> search(long id){
@@ -62,14 +62,17 @@ public class TravelAgencyDemo {
 
     public static void main(String[] args) {
         Application app = new Application();
-        app.addUsers();
-        app.addCountry();
+     //   app.addUsers();
+        app.addCountriesAndCities();
+        app.printCountries();
 
-        app.printUsers();
-        System.out.println("------------------------");
-        System.out.println(app.search(2));
-        System.out.println("------------------------");
-        System.out.println(app.search("Kostya"));
 
+//        app.printUsers();
+//        System.out.println("------------------------");
+//        System.out.println(app.search(2));
+//        System.out.println("------------------------");
+//        System.out.println(app.search("Kostya"));
+
+        Reporting.reportMaker();
     }
 }

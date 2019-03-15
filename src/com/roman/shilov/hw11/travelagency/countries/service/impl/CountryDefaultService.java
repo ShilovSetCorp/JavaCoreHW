@@ -7,8 +7,13 @@ import com.roman.shilov.hw11.travelagency.countries.domain.BaseCountry;
 import com.roman.shilov.hw11.travelagency.countries.repo.CountryRepo;
 import com.roman.shilov.hw11.travelagency.countries.search.CountrySearchCondition;
 import com.roman.shilov.hw11.travelagency.countries.service.CountryService;
+import com.roman.shilov.hw11.travelagency.countries.service.exceptions.CountryIsContainedInSomeOrdersException;
+import com.roman.shilov.hw11.travelagency.order.domain.Order;
 
+import java.util.Iterator;
 import java.util.List;
+
+import static com.roman.shilov.hw11.travelagency.storage.Storage.ordersList;
 
 public class CountryDefaultService implements CountryService {
     private final CountryRepo countryRepo;
@@ -31,7 +36,7 @@ public class CountryDefaultService implements CountryService {
 
         if(baseCountry.getCities() != null){
             for(City city : baseCountry.getCities()){
-                city.setId(SequenceCreator.getNextId());
+    //            city.setId(SequenceCreator.getNextId());
                 cityRepo.insert(city);
             }
         }
@@ -54,7 +59,25 @@ public class CountryDefaultService implements CountryService {
     @Override
     public void delete(BaseCountry baseCountry) {
         if(baseCountry.getId() != null){
-            this.deleteById(baseCountry.getId());
+            try {
+                //Check if Country is contained in some orders
+                for(Order order: ordersList) {
+                    if (order.getBaseCountry().equals(baseCountry)) {
+                        //throw exception if it is so
+                        throw new CountryIsContainedInSomeOrdersException("There are still orders which contains country that should be deleted", 30);
+                    }
+                }
+            }catch (CountryIsContainedInSomeOrdersException e) {
+                System.out.println(e.getMessage());
+            } finally {
+                Iterator<Order> it = ordersList.iterator();
+                while (it.hasNext()) {
+                    if (it.next().getBaseCountry().equals(baseCountry)) {
+                        it.remove();
+                    }
+                }
+                this.deleteById(baseCountry.getId());
+            }
         }
     }
 

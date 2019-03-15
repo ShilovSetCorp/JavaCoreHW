@@ -41,7 +41,7 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void delete(User user) throws UserStillHasOrdersException {
+    public void delete(User user){
         if(user.getId() != null){
             try {
                 for(Order order: ordersList) {
@@ -51,7 +51,6 @@ public class UserDefaultService implements UserService {
                 }
             }catch (UserStillHasOrdersException e) {
                 System.out.println(e.getMessage());
-
             } finally {
                 Iterator<Order> it = ordersList.iterator();
                 while (it.hasNext()){
@@ -59,7 +58,7 @@ public class UserDefaultService implements UserService {
                         it.remove();
                     }
                 }
-                repo.deleteById(user.getId());
+                this.deleteById(user.getId());
             }
         }
     }

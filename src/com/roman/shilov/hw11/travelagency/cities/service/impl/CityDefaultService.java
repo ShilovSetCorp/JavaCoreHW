@@ -4,8 +4,13 @@ import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.cities.repo.CityRepo;
 import com.roman.shilov.hw11.travelagency.cities.search.CitySearchCondition;
 import com.roman.shilov.hw11.travelagency.cities.service.CityService;
+import com.roman.shilov.hw11.travelagency.cities.service.exceptions.CityIsContainedInSomeOrdersException;
+import com.roman.shilov.hw11.travelagency.order.domain.Order;
 
+import java.util.Iterator;
 import java.util.List;
+
+import static com.roman.shilov.hw11.travelagency.storage.Storage.ordersList;
 
 public class CityDefaultService implements CityService {
 
@@ -38,7 +43,23 @@ public class CityDefaultService implements CityService {
     @Override
     public void delete(City city) {
         if(city.getId() != null){
-            this.deleteById(city.getId());
+            try {
+                for(Order order: ordersList) {
+                    if (order.getCity().equals(city)) {
+                        throw new CityIsContainedInSomeOrdersException("There are still orders which contains city that should be deleted", 40);
+                    }
+                }
+            }catch (CityIsContainedInSomeOrdersException e) {
+                System.out.println(e.getMessage());
+            } finally {
+                Iterator<Order> it = ordersList.iterator();
+                while (it.hasNext()){
+                    if(it.next().getCity().equals(city)){
+                        it.remove();
+                    }
+                }
+                this.deleteById(city.getId());
+            }
         }
     }
 
