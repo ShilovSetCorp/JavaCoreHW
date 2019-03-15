@@ -13,9 +13,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Initilisator {
+public class Initilizator {
 
-    private static final String CITIES_COUNTRIES_PATH = "C:\\Users\\RomanSES\\epam\\src\\resources\\InitCitiesAndCountries.txt";//"src\\com\\roman\\shilov\\resources\\InitCitiesAndCountries.txt";
+    private static final String CITIES_COUNTRIES_PATH = "src\\resources\\InitCitiesAndCountries.txt";
 
 
     private static CountryService countryService = ServiceSupplier.setSupplier().getCountryService();

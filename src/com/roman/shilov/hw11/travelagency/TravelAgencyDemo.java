@@ -2,11 +2,11 @@ package com.roman.shilov.hw11.travelagency;
 
 import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.cities.search.CitySearchCondition;
+import com.roman.shilov.hw11.travelagency.common.buisness.initialisation.Initilizator;
 import com.roman.shilov.hw11.travelagency.countries.domain.BaseCountry;
 import com.roman.shilov.hw11.travelagency.cities.service.CityService;
 import com.roman.shilov.hw11.travelagency.common.buisness.application.StorageType;
 import com.roman.shilov.hw11.travelagency.common.buisness.application.servicefactory.ServiceSupplier;
-import com.roman.shilov.hw11.travelagency.common.buisness.initialisation.Initilisator;
 import com.roman.shilov.hw11.travelagency.countries.search.CountrySearchCondition;
 import com.roman.shilov.hw11.travelagency.countries.service.CountryService;
 import com.roman.shilov.hw11.travelagency.order.domain.Order;
@@ -39,7 +39,7 @@ public class TravelAgencyDemo {
         }
 
         private void addCountriesAndCities() {
-            Initilisator.readerFromFile();
+            Initilizator.readerFromFile();
 
         }
 
