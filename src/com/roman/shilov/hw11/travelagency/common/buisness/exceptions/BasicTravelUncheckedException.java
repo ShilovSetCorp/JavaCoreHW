@@ -1,6 +1,6 @@
 package com.roman.shilov.hw11.travelagency.common.buisness.exceptions;
 
-public class BasicTravelUncheckedException extends RuntimeException {
+public abstract class BasicTravelUncheckedException extends RuntimeException {
     private int code;
 
     public int getCode() {

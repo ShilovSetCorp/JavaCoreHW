@@ -36,36 +36,29 @@ public class OrderMemoryArrayRepo implements OrderRepo {
     }
 
     private List<Order> doSearch(OrderSearchCondition searchCondition){
-            boolean searchByUser = searchCondition.getUser() != null;
-            boolean searchByCountry = searchCondition.getBaseCountry() != null;
-            boolean searchByCity = searchCondition.getCity() != null;
-            boolean searchByDescription = searchCondition.getDescription() != null;
-            boolean searchByPrice = searchCondition.getPrice() > 0;
-
             Order[] result = new Order[orders.length];
             int resultIndex = 0;
 
             for (Order order : orders) {
                 if (order != null) {
                     boolean found = true;
-
-                    if (searchByUser) {
+                    if (searchCondition.searchByUser()) {
                         found = searchCondition.getUser().equals(order.getUser());
                     }
 
-                    if (found && searchByCountry) {
+                    if (found && searchCondition.searchByCountry()) {
                         found = searchCondition.getBaseCountry().equals(order.getBaseCountry());
                     }
 
-                    if (found && searchByCity) {
+                    if (found && searchCondition.searchByCity()) {
                         found = searchCondition.getCity().equals(order.getCity());
                     }
 
-                    if (found && searchByDescription) {
+                    if (found && searchCondition.searchByDescription()) {
                         found = searchCondition.getDescription().equals(order.getDescription());
                     }
 
-                    if (found && searchByPrice) {
+                    if (found && searchCondition.searchByPrice()) {
                         found = searchCondition.getPrice() == order.getPrice();
                     }
 

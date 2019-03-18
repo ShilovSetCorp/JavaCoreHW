@@ -60,4 +60,25 @@ public class OrderSearchCondition extends BaseSearchConditition {
     public void setPrice(int price) {
         this.price = price;
     }
+
+    public boolean searchByUser(){
+        return this.user != null;
+    }
+
+    public boolean searchByCountry(){
+        return this.baseCountry != null;
+    }
+
+    public boolean searchByCity(){
+        return this.city != null;
+    }
+
+
+    public boolean searchByDescription(){
+        return this.description != null;
+    }
+
+    public boolean searchByPrice(){
+        return this.price >= 0;
+    }
 }

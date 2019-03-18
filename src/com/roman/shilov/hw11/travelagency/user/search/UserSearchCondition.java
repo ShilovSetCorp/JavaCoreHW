@@ -2,6 +2,9 @@ package com.roman.shilov.hw11.travelagency.user.search;
 
 import com.roman.shilov.hw11.travelagency.common.buisness.search.BaseSearchConditition;
 
+
+import static com.roman.shilov.hw11.travelagency.common.solutions.utils.StringUtils.isNotBlank;
+
 public class UserSearchCondition extends BaseSearchConditition {
 
     private String name;
@@ -31,4 +34,13 @@ public class UserSearchCondition extends BaseSearchConditition {
     public void setLast(String last) {
         this.last = last;
     }
+
+    public boolean searchByName(){
+        return isNotBlank(this.getName());
+    }
+
+    public boolean searchByLast(){
+        return isNotBlank(this.getLast());
+    }
+
 }

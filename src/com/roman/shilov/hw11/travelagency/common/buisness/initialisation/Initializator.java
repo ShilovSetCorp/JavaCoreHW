@@ -13,13 +13,14 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Initilizator {
+public class Initializator {
 
     private static final String CITIES_COUNTRIES_PATH = "src\\resources\\InitCitiesAndCountries.txt";
 
-
     private static CountryService countryService = ServiceSupplier.setSupplier().getCountryService();
     private static CityService cityService = ServiceSupplier.setSupplier().getCityService();
+
+    private static List<City> cities;
 
 
     public static void readerFromFile() {
@@ -27,21 +28,15 @@ public class Initilizator {
             String s;
             while ((s = reader.readLine()) != null) {
                 BaseCountry country = null;
-                List<City> cities = new ArrayList<>();
+                cities = new ArrayList<>();
                 if ("country".equals(s)) {
-                    String[] countryFields = reader.readLine().split(" ");
-
-                    if ("hot".equals(countryFields[0])) {
-                        country = new HotCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]));
-                    } else if ("cold".equals(countryFields[0])) {
-                        country = new ColdCountry(countryFields[1], countryFields[2], countryFields[3], Months.valueOf(countryFields[4]), Integer.parseInt(countryFields[5]), "polarnight".equals(countryFields[6]));
-                    }
+                    s = reader.readLine();
+                    country = parseCountryFromString(s);
                 }
+
                 String cityString;
                 while ((cityString = reader.readLine()) != null && !"end country".equals(cityString)) {
-                    City city = new City(cityString.split(" ")[0], Integer.parseInt(cityString.split(" ")[1]), "capital".compareToIgnoreCase(cityString.split(" ")[2]) == 0);
-                    cities.add(city);
-                    cityService.insert(city);
+                    parseCityFromString(cityString);
                 }
 
                 if (country != null) {
@@ -53,4 +48,25 @@ public class Initilizator {
             e.printStackTrace();
         }
     }
+
+    private static BaseCountry parseCountryFromString(String s){
+        String[] countryFields = s.split(" ");
+        int attrIndex = -1;
+        if ("hot".equals(countryFields[++attrIndex])) {
+            return new HotCountry(countryFields[++attrIndex], countryFields[++attrIndex], countryFields[++attrIndex], Months.valueOf(countryFields[++attrIndex]), Integer.parseInt(countryFields[++attrIndex]));
+        } else if ("cold".equals(countryFields[attrIndex])) {
+            return new ColdCountry(countryFields[++attrIndex], countryFields[++attrIndex], countryFields[++attrIndex], Months.valueOf(countryFields[++attrIndex]), Integer.parseInt(countryFields[++attrIndex]), "polarnight".equals(countryFields[++attrIndex]));
+        }
+        return null;
+    }
+
+    private static void parseCityFromString(String s){
+        int attrIndex = -1;
+        City city = new City(s.split(" ")[++attrIndex], Integer.parseInt(s.split(" ")[++attrIndex].trim()), "capital".compareToIgnoreCase(s.split(" ")[++attrIndex]) == 0);
+        cities.add(city);
+        cityService.insert(city);
+    }
+
+
+
 }

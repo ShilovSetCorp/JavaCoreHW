@@ -59,9 +59,6 @@ public class UserMemoryArrayRepo implements UserRepo {
     }
 
     private List<User> doSearch(UserSearchCondition searchCondition){
-        boolean searchByName = searchCondition.getName() != null;
-        boolean searchByLast = searchCondition.getLast() != null;
-
         User[] result = new User[users.length];
         int resultIndex = 0;
 
@@ -69,14 +66,13 @@ public class UserMemoryArrayRepo implements UserRepo {
             if (user != null) {
                 boolean found = true;
 
-                if (searchByName) {
+                if (searchCondition.searchByName()) {
                     found = searchCondition.getName().equals(user.getName());
                 }
 
-                if (found && searchByLast) {
+                if (found && searchCondition.searchByLast()) {
                     found = searchCondition.getLast().equals(user.getLast());
                 }
-
 
                 if (found) {
                     result[resultIndex] = user;

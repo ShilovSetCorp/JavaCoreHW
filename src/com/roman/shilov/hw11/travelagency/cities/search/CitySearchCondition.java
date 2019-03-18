@@ -1,6 +1,7 @@
 package com.roman.shilov.hw11.travelagency.cities.search;
 
 import com.roman.shilov.hw11.travelagency.common.buisness.search.BaseSearchConditition;
+import static com.roman.shilov.hw11.travelagency.common.solutions.utils.StringUtils.isNotBlank;
 
 public class CitySearchCondition extends BaseSearchConditition {
     private String name;
@@ -33,5 +34,13 @@ public class CitySearchCondition extends BaseSearchConditition {
 
     public boolean needOrdering() {
         return super.needOrdering() && orderByField != null;
+    }
+
+    public boolean searchByName(){
+        return isNotBlank(this.getName());
+    }
+
+    public boolean searchByPopulation(){
+        return this.getPopulation() > 0;
     }
 }

@@ -11,9 +11,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static com.roman.shilov.hw11.travelagency.common.solutions.utils.StringUtils.isNotBlank;
 import static com.roman.shilov.hw11.travelagency.storage.Storage.cities;
-
 
 public class CityMemoryArrayRepo implements CityRepo {
 
@@ -62,9 +60,6 @@ public class CityMemoryArrayRepo implements CityRepo {
     }
 
     private List<City> doSearch(CitySearchCondition searchCondition){
-        boolean searchByPopulation = searchCondition.getPopulation() > 0;
-
-        boolean searchByName = isNotBlank(searchCondition.getName());
 
         City[] result = new City[cities.length];
         int resultIndex = 0;
@@ -73,11 +68,11 @@ public class CityMemoryArrayRepo implements CityRepo {
             if (city != null) {
                 boolean found = true;
 
-                if (searchByPopulation) {
+                if (searchCondition.searchByPopulation()) {
                     found = searchCondition.getPopulation() == city.getPopulation();
                 }
 
-                if (found && searchByName) {
+                if (found && searchCondition.searchByName()) {
                     found = searchCondition.getName().equals(city.getName());
                 }
 

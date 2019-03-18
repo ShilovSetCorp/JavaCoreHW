@@ -45,7 +45,7 @@ public class CityDefaultService implements CityService {
         if(city.getId() != null){
             try {
                 for(Order order: ordersList) {
-                    if (order.getCity().equals(city)) {
+                    if (order.getCity().getId().equals(city.getId())) {
                         throw new CityIsContainedInSomeOrdersException("There are still orders which contains city that should be deleted", 40);
                     }
                 }
@@ -54,7 +54,7 @@ public class CityDefaultService implements CityService {
             } finally {
                 Iterator<Order> it = ordersList.iterator();
                 while (it.hasNext()){
-                    if(it.next().getCity().equals(city)){
+                    if(it.next().getCity().getId().equals(city.getId())){
                         it.remove();
                     }
                 }

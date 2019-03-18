@@ -1,6 +1,6 @@
 package com.roman.shilov.hw11.travelagency.common.buisness.exceptions;
 
-public class BasicTravelCheckedException extends Exception {
+public abstract class BasicTravelCheckedException extends Exception {
     private int code;
 
     public BasicTravelCheckedException(String message, int code) {

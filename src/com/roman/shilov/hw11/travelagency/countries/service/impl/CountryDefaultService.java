@@ -62,7 +62,7 @@ public class CountryDefaultService implements CountryService {
             try {
                 //Check if Country is contained in some orders
                 for(Order order: ordersList) {
-                    if (order.getBaseCountry().equals(baseCountry)) {
+                    if (order.getBaseCountry().getId().equals(baseCountry.getId())) {
                         //throw exception if it is so
                         throw new CountryIsContainedInSomeOrdersException("There are still orders which contains country that should be deleted", 30);
                     }
@@ -72,7 +72,7 @@ public class CountryDefaultService implements CountryService {
             } finally {
                 Iterator<Order> it = ordersList.iterator();
                 while (it.hasNext()) {
-                    if (it.next().getBaseCountry().equals(baseCountry)) {
+                    if (it.next().getBaseCountry().getId().equals(baseCountry.getId())) {
                         it.remove();
                     }
                 }

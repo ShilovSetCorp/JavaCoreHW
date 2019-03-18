@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.roman.shilov.hw11.travelagency.common.solutions.utils.StringUtils.isNotBlank;
 import static com.roman.shilov.hw11.travelagency.storage.Storage.cityList;
 
 
@@ -46,19 +45,15 @@ public class CityMemoryCollectionRepo implements CityRepo {
     }
 
     private List<City> doSearch(CitySearchCondition searchCondition){
-
-        boolean searchByPopulation = searchCondition.getPopulation() > 0;
-        boolean searchByName = isNotBlank(searchCondition.getName());
-
         List<City> result = new ArrayList<>();
         for (City city : cityList) {
             if (city != null) {
                 boolean found = true;
-                if (searchByPopulation) {
+                if (searchCondition.searchByPopulation()) {
                     found = searchCondition.getPopulation() == city.getPopulation();
                 }
 
-                if (found && searchByName) {
+                if (found && searchCondition.searchByName()) {
                     found = searchCondition.getName().equals(city.getName());
                 }
 

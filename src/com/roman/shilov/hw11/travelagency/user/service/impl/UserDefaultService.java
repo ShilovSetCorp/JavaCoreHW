@@ -45,7 +45,7 @@ public class UserDefaultService implements UserService {
         if(user.getId() != null){
             try {
                 for(Order order: ordersList) {
-                    if (order.getUser().equals(user)) {
+                    if (order.getUser().getId().equals(user.getId())) {
                         throw new UserStillHasOrdersException("There are still orders which contains user that should be deleted", 20);
                     }
                 }
@@ -54,7 +54,7 @@ public class UserDefaultService implements UserService {
             } finally {
                 Iterator<Order> it = ordersList.iterator();
                 while (it.hasNext()){
-                    if(it.next().getUser().equals(user)){
+                    if(it.next().getUser().getId().equals(user.getId())){
                         it.remove();
                     }
                 }
