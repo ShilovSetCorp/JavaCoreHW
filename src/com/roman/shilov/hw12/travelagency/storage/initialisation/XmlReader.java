@@ -45,7 +45,6 @@ public class XmlReader implements SourceReader<List<BaseCountry>> {
                 }else if("cold".equals(coutryDescriptorTag.item(0).getTextContent())){
                     country = new ColdCountry();
                 }
-
                 if(country != null){
                     parsedCountries.add(country);
                     fillCountryFields(country, countryInnerTags);
