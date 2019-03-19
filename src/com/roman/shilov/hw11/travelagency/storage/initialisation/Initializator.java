@@ -1,4 +1,4 @@
-package com.roman.shilov.hw11.travelagency.common.buisness.initialisation;
+package com.roman.shilov.hw11.travelagency.storage.initialisation;
 
 import com.roman.shilov.hw11.travelagency.cities.domain.City;
 import com.roman.shilov.hw11.travelagency.cities.service.CityService;
