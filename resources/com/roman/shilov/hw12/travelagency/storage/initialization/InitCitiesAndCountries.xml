@@ -1,6 +1,5 @@
 <countries>
-    <country>
-        <descriptor>cold</descriptor>
+    <country type="COLD">
         <name>Russia</name>
         <language>russian</language>
         <telephoneCode>+7</telephoneCode>
@@ -15,8 +14,7 @@
             </city>
         </cities>
     </country>
-    <country>
-        <descriptor>cold</descriptor>
+    <country type="COLD">
         <name>Sweden</name>
         <language>swedish</language>
         <telephoneCode>+58</telephoneCode>
@@ -31,8 +29,7 @@
             </city>
         </cities>
     </country>
-    <country>
-        <descriptor>hot</descriptor>
+    <country type="HOT">
         <name>OAE</name>
         <language>arabic</language>
         <telephoneCode>+398</telephoneCode>
