@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="cityJaxb">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="population" type="xs:int"/>
+                <xs:element name="isCapital" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="country">
+        <xs:complexType>
+            <xs:sequence>
+                 <xs:element name="name" type="xs:string"/>
+                 <xs:element name="language" type="xs:string"/>
+                 <xs:element name="telephoneCode" type="xs:string"/>
+                 <xs:element name="cities">
+                <xs:complexType>
+                    <xs:sequence>
+                         <xs:element ref="cityJaxb" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+                <xs:element name="averageSnowLevel" type="xs:int" minOccurs="0"/>
+                <xs:element name="averageTemp" type="xs:int" minOccurs="0"/>
+                <xs:element name="hottestMonth" type="xs:string" minOccurs="0"/>
+                <xs:element name="theMostSnowingMonth" type="xs:string" minOccurs="0"/>
+                 <xs:element name="polarNight" type="xs:boolean" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="init-data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="countries">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element ref="country" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

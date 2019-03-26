@@ -1,0 +1,17 @@
+country
+coldstuffRussiastuffrussianstuff+7stuffJANstuff4stuffNopolarnight
+Moscowstuff12000000stuffcapital
+endstuffcountry
+country
+coldstuffSwedenstuffswedishstuff+58stuffFEBstuff8stuffpolarnight
+Stockholmstuff5000000stuffcapital
+endstuffcountry
+country
+hotstuffThailandstuffthaistuff+347stuffMARstuff30
+Patayastuff1000000stuffnotcapital
+endstuffcountry
+country
+hotstuffOAEstuffarabicstuff+398stuffJULstuff40
+Dubaistuff2000000stuffnotcapital
+endstuffcountry
+

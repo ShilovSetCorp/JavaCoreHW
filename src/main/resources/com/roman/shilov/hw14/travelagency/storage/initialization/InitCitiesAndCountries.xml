@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<init-data>
+<countries>
+    <country type="COLD">
+        <name>Russia</name>
+        <language>russian</language>
+        <telephoneCode>+7</telephoneCode>
+        <theMostSnowingMonth>JAN</theMostSnowingMonth>
+        <averageSnowLevel>4</averageSnowLevel>
+        <polarnight>nopolarnight</polarnight>
+        <cities>
+            <cityJaxb>
+                <name>Moscow</name>
+                <population>12000000</population>
+                <iscapital>capital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+    <country type="COLD">
+        <name>Sweden</name>
+        <language>swedish</language>
+        <telephoneCode>+58</telephoneCode>
+        <theMostSnowingMonth>FEB</theMostSnowingMonth>
+        <averageSnowLevel>8</averageSnowLevel>
+        <polarnight>polarnight</polarnight>
+        <cities>
+            <cityJaxb>
+                <name>Stockholm</name>
+                <population>5000000</population>
+                <iscapital>capital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+    <country type="HOT">
+        <name>OAE</name>
+        <language>arabic</language>
+        <telephoneCode>+398</telephoneCode>
+        <hottestMonth>JUL</hottestMonth>
+        <averageTemp>40</averageTemp>
+        <cities>
+            <cityJaxb>
+                <name>Dubai</name>
+                <population>2000000</population>
+                <iscapital>notcapital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+</countries>
+</init-data>

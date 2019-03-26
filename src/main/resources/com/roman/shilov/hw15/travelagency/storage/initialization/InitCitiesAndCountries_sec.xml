@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<init-data>
+<countries>
+    <country type="COLD">
+        <name>Finland</name>
+        <language>finnish</language>
+        <telephoneCode>+365</telephoneCode>
+        <theMostSnowingMonth>JAN</theMostSnowingMonth>
+        <averageSnowLevel>5</averageSnowLevel>
+        <polarnight>nopolarnight</polarnight>
+        <cities>
+            <cityJaxb>
+                <name>Helsinki</name>
+                <population>500000</population>
+                <iscapital>capital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+    <country type="HOT">
+        <name>Spain</name>
+        <language>spanish</language>
+        <telephoneCode>+234</telephoneCode>
+        <hottestMonth>JUL</hottestMonth>
+        <averageTemp>28</averageTemp>
+        <cities>
+            <cityJaxb>
+                <name>Barcelona</name>
+                <population>2000000</population>
+                <iscapital>notcapital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+    <country type="HOT">
+        <name>Egypt</name>
+        <language>arabic</language>
+        <telephoneCode>+435</telephoneCode>
+        <hottestMonth>JUL</hottestMonth>
+        <averageTemp>42</averageTemp>
+        <cities>
+            <cityJaxb>
+                <name>Cayro</name>
+                <population>1000000</population>
+                <iscapital>capital</iscapital>
+            </cityJaxb>
+        </cities>
+    </country>
+</countries>
+</init-data>
