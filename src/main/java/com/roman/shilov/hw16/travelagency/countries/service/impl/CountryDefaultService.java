@@ -44,9 +44,10 @@ public class CountryDefaultService implements CountryService {
 
     @Override
     public void insert(Collection<BaseCountry> items) {
-        countryRepo.insert(items);
         if (!items.isEmpty()) {
-           for(BaseCountry country : items) {
+            countryRepo.insert(items);
+
+            for(BaseCountry country : items) {
                if(country.getCities() != null) {
                    cityRepo.insert(country.getCities());
                }

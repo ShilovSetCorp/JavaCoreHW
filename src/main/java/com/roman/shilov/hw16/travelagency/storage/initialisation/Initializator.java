@@ -35,12 +35,8 @@ public class Initializator {
         thread2.start();
         thread1.join();
         thread2.join();
-        for (BaseCountry c: thread1.getCountries()) {
-            countryService.insert(c);
-        }
-        for (BaseCountry c: thread2.getCountries() ) {
-            countryService.insert(c);
-        }
+        countryService.insert(thread1.getCountries());
+        countryService.insert(thread2.getCountries());
     }
 
 
